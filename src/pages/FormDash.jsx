@@ -13,6 +13,7 @@ const TourForm = () => {
   const [destination, setDestination] = useState("");
   const [duration, setDuration] = useState("");
   const [image, setImage] = useState("");
+  const [Price, setPrice] = useState("");
   const handleImage = (e) => {
     e.preventDefault();
     console.log(e.target.files, "file");
@@ -24,17 +25,11 @@ const TourForm = () => {
   formData.append("description", description);
   formData.append("duration", duration);
   formData.append("destination", destination);
+  formData.append("Price", Price);
   const handleForm = (e) => {
     //console.log("Hello");
     e.preventDefault();
-    axios({
-      method: "POST",
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
-      data: formData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
+  
 
     axios({
       method: "POST",
@@ -59,115 +54,115 @@ const TourForm = () => {
   return (
     <div className="">
       <ToastContainer />
-      <div className=" ">
-        <form
-          action="/"
-          method="get"
-          id="form"
-          class=" "
-        >
-          <h2 className="">Tour Form</h2>
-          <div className="">
-            <div className="">
-              <div className="">
-                <label
-                  htmlFor=""
-                  className=""
-                >
-                  Title
-                </label>
-                <input
-                  value={title}
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
-                  type="text"
-                  id="name1"
-                  class="  "
-                  placeholder="Enter the title "
-                  secondary
-                />
-              </div>
-              <div className="">
-                <label
-                  htmlFor=""
-                  className=""
-                >
-                  Description
-                </label>
-                <input
-                  value={description}
-                  onChange={(e) => {
-                    setDescription(e.target.value);
-                  }}
-                  type="email"
-                  id="email"
-                  class=" "
-                  placeholder="Enter your description"
-                />
-              </div>
-            </div>
-            <div className="">
-              <div className="">
-                <label
-                  htmlFor=""
-                  className=""
-                >
-                  Destination
-                </label>
-                <input
-                  value={destination}
-                  onChange={(e) => {
-                    setDestination(e.target.value);
-                  }}
-                  type="text"
-                  id="name1"
-                  class=""
-                  placeholder="Enter your destination "
-                />
-              </div>
-              <div className="">
-                <label
-                  htmlFor=""
-                  className=""
-                >
-                  Duration
-                </label>
-                <input
-                  value={duration}
-                  onChange={(e) => {
-                    setDuration(e.target.value);
-                  }}
-                  type="email"
-                  id="email"
-                  class=""
-                  placeholder="Enter your duration"
-                />
-              </div>
-            </div>
-            <div className="">
-              <label
-                htmlFor=""
-                className=""
-              >
-                Image
-              </label>
-              <input
-                onChange={(e) => handleImage(e)}
-                type="file"
-                id="email"
-                class=""
-                placeholder="Enter your image"
-              />
-            </div>
-            <button
-              className=""
-              onClick={handleForm}
-            >
-              <Link to="/DashTour">Add tour</Link>
-              <p>Add tour</p>
-            </button>
-          </div>
+
+      <div className="form-container">
+        <form className="form">
+          <table className="form-table">
+            <tr>
+              <td>
+                <h2 className="tourform">Tour Form</h2>
+                <div className="form-column">
+                  <label
+                    htmlFor="image"
+                    className="form-label"
+                  >
+                    Image
+                  </label>
+                  <input
+                    type="file"
+                    id="image"
+                    className="form-input"
+                    onChange={(e) => handleImage(e)}
+                    placeholder="Enter your image"
+                  />
+
+                  <label
+                    htmlFor="title"
+                    className="form-label"
+                  >
+                    Title
+                  </label>
+                  <input
+                    type="text"
+                    id="title"
+                    className="form-input"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Enter the number of size"
+                  />
+
+                  <label
+                    htmlFor="description"
+                    className="form-label"
+                  >
+                    Description
+                  </label>
+                  <input
+                    type="text"
+                    id="description"
+                    className="form-input"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Enter your description"
+                  />
+                </div>
+              </td>
+              <td>
+                <div className="form-column">
+                  <label
+                    htmlFor="destination"
+                    className="form-label"
+                  >
+                    Destination
+                  </label>
+                  <input
+                    type="text"
+                    id="destination"
+                    className="form-input"
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    placeholder="Enter your destination"
+                  />
+
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    Duration
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={duration}
+                    onChange={(e) => setDuration(e.target.value)}
+                    placeholder="Enter your duration"
+                  />
+
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    Duration
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={Price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="Enter Price"
+                  />
+                </div>
+              </td>
+            </tr>
+          </table>
+          <button
+            className="form-button"
+            onClick={handleForm}
+          >
+            Add Tour
+          </button>
         </form>
       </div>
     </div>

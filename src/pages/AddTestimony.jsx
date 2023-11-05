@@ -16,11 +16,11 @@ export default function AddTestimony() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // setIsLoading(true);
-    console.log("yoo");
+    console.log("hellllo");
 
     axios({
       method: "POST",
-      url: "https://holiday-api-zj3a.onrender.com/api/v1/auth/signup",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
       data: {
         email: Email,
         fullName: FirstName + LastName,
@@ -34,12 +34,19 @@ export default function AddTestimony() {
 
         toast.success("signup sucessfully!");
         setTimeout(() => {
-          navigate("/Dash");
+
+           if (esponse.data.user.role == "admin") {
+             navigate("/Dash");
+           } else {
+             navigate("/");
+           }
+          
+        
         }, 5000);
       })
       .catch((error) => {
         console.log(error);
-        // alert("An error happened");
+        alert("An error happened");
         toast.error("Failed to signup!");
       });
 
@@ -50,72 +57,72 @@ export default function AddTestimony() {
   };
   return (
     <div>
-      <div className="alllogin">
-        <h1 className="hidesignup">hide</h1>
-        <div className="login-container">
-          <ToastContainer className="toast" />
-          <h2 className="signuprespo">Sign Up</h2>
-          {/* <p>If you don't have account</p> */}
-          <form className="loginwidth" />
-          <input
-            value={FirstName}
-            type="text"
-            name="username"
-            placeholder="FirstName"
-            required
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <p>{FirstName}</p>
-          <br />
-          <input
-            value={LastName}
-            type="text"
-            name="username"
-            placeholder="LastName"
-            required
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <p>{LastName}</p>
-          <br />
-          <input
-            value={Email}
-            type="text"
-            name="username"
-            placeholder="Email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <p>{Email}</p>
-          <br />
-          <input
-            value={Password}
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <p>{Password}</p>
-          <br /> <br />
-          <input
-            onClick={handleSubmit}
-            type="submit"
-            value="Sign Up"
-          />
-          <br /> <br />
-          <p>___________or login with_________</p> <br />
-          <button className="loginicon"> Google</button> or
-          <button className="loginicon">FaceBook</button>
-          <form />
-          <div className="imgsign1">
-            <img
-              className="imgsign1"
-              src="login.JPG"
-              alt="Image 1"
-            />
-          </div>
+      <div className="login-container">
+        <ToastContainer className="toast" />
+        <h2 className="signuprespo">Sign Up</h2>
+        <p>If you don't have account</p>
+        <form className="loginwidth" />
+        <input
+          value={FirstName}
+          type="text"
+          name="username"
+          placeholder="FirstName"
+          required
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <p>{FirstName}</p>
+        <br />
+        <input
+          value={LastName}
+          type="text"
+          name="username"
+          placeholder="LastName"
+          required
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <p>{LastName}</p>
+        <br />
+        <input
+          value={Email}
+          type="text"
+          name="username"
+          placeholder="Email"
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <p>{Email}</p>
+        <br />
+        <input
+          value={Password}
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <p>{Password}</p>
+        <br /> <br />
+        <input 
+          onClick={handleSubmit}
+          type="submit"
+          value="Sign Up"
+        />
+        <br /> <br />
+         <p>___________or login with_________</p>
+        <div className="mb-6">
+          <button className="bg-custom text-white p-2 rounded cursor-pointer hover:bg-red-700">
+            Google
+          </button>
+          <span className="mx-2">or</span>
+          <button className="bg-custom text-white p-2 rounded cursor-pointer hover:bg-blue-700">
+            Facebook
+          </button>
         </div>
+      
+  <img className="imgsignuptail" src="login.JPG" alt="Image 1" />
+        <form />
       </div>
+     
     </div>
   );
 }

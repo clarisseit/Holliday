@@ -12,8 +12,8 @@ import { AiOutlineRight } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
-import { GrAddCircle } from "react-icons/gr";
 import { BiMenuAltRight } from "react-icons/bi";
+import { GrAddCircle } from "react-icons/gr";
 import { ToastContainer, toast } from "react-toastify";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -34,7 +34,7 @@ export default function () {
     axios({
       method: "GET",
 
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/view",
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -53,7 +53,7 @@ export default function () {
     if (window.confirm("Are you sure you want to delete?")) {
       let token = localStorage.getItem("token");
       axios({
-        url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
+        url: `https://holiday-planner-4lnj.onrender.com/api/v1/booking/${id}`,
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -66,6 +66,8 @@ export default function () {
         .catch((error) => {
           toast.error(error.response.data.message);
           console.log(error, "Error");
+          console.log(id, "id");
+          console.log(token, "token");
         });
     }
   };
@@ -80,51 +82,41 @@ export default function () {
             Dashboard Menu <BiMenuAltRight />
           </p>
         </Link>
-        <div className="dash1">
-          <div className="addtours">
-            <Link to="/FormDash">
-              <button className="addtoursin">
-                <GrAddCircle />
-                Add Tours
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="tours">
-          <h1 className="ml-30 font-bold text-4xl text-custom"> Tours</h1>
+
+        <h1 className=" mr-80font-bold text-4xl text-custom">Booking</h1>
+
+        <div className="addtours">
+          <Link to="/FormDash">
+            {/* <button className="addtoursin">
+              <GrAddCircle />
+              Booking Now
+            </button> */}
+          </Link>
         </div>
 
         <table className="dashtable">
           <tbody>
             <tr>
-              <td>Destination Image</td>
-              <td>Destination</td>
-              <td>Duration</td>
-              <td>Group Size</td>
-              <td>Price</td>
+              <td>Tour Id</td>
+              <td>User Id</td>
+              <td>isPayed</td>
+              <td>Payment Method</td>
+
               <td>Actions</td>
             </tr>
             {tours.map((item) => {
               return (
                 <tr className="titletable">
-                  <td>
-                    <img
-                      src={item.backdropImage}
-                      alt=""
-                      className="backdropdest"
-                    />
-                  </td>
-                  <td>{item.destination}</td>
-                  <td>{item.Duration}</td>
-                  <td>{item.destination}</td>
-                  <td>{item.GroupSize}</td>
-                  <td>{item.price}</td>
-                  <td>{item.action}</td>
+                  <td>{item.tourID}</td>
+                  <td>{item.userID}</td>
+                  <td>{item.isPayed}</td>
+                  <td>{item.paymentMethod}</td>
+
                   <td>
                     <div className="actions">
                       <button
                         onClick={() => {
-                          navigate(`/editTour/${item._id}`);
+                          navigate(`/EditBooking/${item._id}`);
                         }}
                         className="editdash"
                       >

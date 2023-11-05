@@ -3,6 +3,51 @@
 * {
   font-family: "Montserrat";
 }
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.home-inf {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(211px, 1fr));
+  grid-gap: 10px;
+}
+
+.box {
+  height: 200px;
+  color: white;
+  border-radius: 2px solid white;
+  position: relative;
+}
+
+label {
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  position: absolute;
+  top: -190%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box-btn {
+  margin-left: 3rem;
+  margin-top: -25rem;
+  width: 15rem;
+  height: 4rem;
+  color: white;
+  font-size: 2rem;
+  background-color: #c29d59;
+}
+
+.box-btn:hover {
+  background-color: #070707;
+  color: white;
+}
 .headee2 {
   display: flex;
   font-size: 29px;
@@ -47,7 +92,7 @@
 /* Style for the links */
 .menu2 a {
   text-decoration: none;
-  
+
   transition: color 0.3s;
 }
 
@@ -155,6 +200,8 @@ form {
   gap: 3rem;
 }
 
+
+
 .footer1 {
   display: flex;
   margin-top: 11rem;
@@ -175,14 +222,11 @@ form {
   margin-left: 5rem;
 }
 .imagetestmony {
-  margin-left: 11rem;
+  margin-left: 6rem;
+  margin-top: -1rem;
   font-size: 3rem;
   width: 90%;
   height: 40rem;
-}
-.testmony {
-  background-color: #c29d59;
-  border-radius: 6rem;
 }
 
 .abc {
@@ -204,6 +248,8 @@ form {
   width: 5rem;
   height: 2em;
 }
+
+
 
 .card {
   display: flex;
@@ -248,6 +294,9 @@ form {
   width: 6rem;
   background-color: #c29d59;
 }
+
+
+
 .msg {
   background-color: #c29d59;
   color: #fff;
@@ -259,13 +308,13 @@ form {
   border-radius: 3rem;
 }
 
-#email {
+/* #email {
   display: flex;
   width: 16rem;
   height: 3rem;
   border-radius: 2rem;
   border: #c29d59 solid;
-}
+} */
 
 #myTextArea {
   display: flex;
@@ -335,16 +384,6 @@ form {
   text-align: center;
   align-content: center;
 }
-@media (max-width: 732px) {
-  #containerSlider img {
-    height: 12em;
-  }
-}
-@media (max-width: 500px) {
-  #containerSlider img {
-    height: 10em;
-  }
-}
 
 .p1 {
   font-size: 3rem;
@@ -373,6 +412,9 @@ form {
   height: 10rem;
   background-color: #ff6600;
 }
+
+
+
 
 .side11 {
   display: flex;
@@ -440,7 +482,7 @@ form {
 
 .navemail {
   justify-content: center;
-  font-size:1.6em;
+  font-size: 1.6em;
   margin-left: 10.1rem;
 }
 .navicon {
@@ -482,27 +524,6 @@ form {
   height: 6rem;
   justify-content: space-evenly;
   display: flex;
-}
-
-.reserve {
-  color: white;
-  font-size: 2.9rem;
-  background-color: #c29d59;
-  border-radius: 2rem;
-}
-
-.navmenu {
-  font-size: 3rem;
-  border-radius: 7rem;
-  margin-top: 1.1rem;
-  width: 12rem;
-  height: 3rem;
-  background-color: #c29d59;
-}
-.navimg1 {
-  width: 20rem;
-  height: 7rem;
-  margin-left: 3rem;
 }
 
 .openmodal {
@@ -596,7 +617,6 @@ form {
   font-size: 1.3rem;
 }
 .tourlistimg {
-  
   width: 100%;
 }
 
@@ -612,273 +632,238 @@ form {
   background-color: #ffff;
 }
 
-.destinationtr {
-  background-color: #f1e9e9;
-  width: 15rem;
-  height: 3rem;
-  font-size: 2rem;
-  text-align: center;
-  border: 1px solid rgb(8, 8, 8);
-}
-.homefirst {
-  margin-bottom: 3px;
-  font-size: 10rem;
-  margin-left: 38rem;
-  color: #f1ecec;
-}
 
-.homefirst1 {
-  width: 50rem;
-  margin-left: 39rem;
-  height: 10rem;
-  font-size: 6rem;
-  
-  color: #e8e3e3;
-}
-.homefirst2 {
-  font-size: 2rem;
-  margin-left: 33rem;
-  color: #e8e3e3;
-}
 
-.pi {
-  width: 100%;
-  border-radius: 10rem;
-}
-.bcgrdimg {
-  margin-top: -45%;
-}
-.choose1tour1 {
-  width: 130rem;
-  height: 3rem;
-  border-radius: 1rem;
-  border: 1px solid rgb(8, 8, 8);
-}
-.tourform {
+
+.side11 {
   display: flex;
+  width: 120rem;
+  height: 40rem;
+  padding: 5rem;
+  justify-content: space-between;
+}
+
+.italy {
+  display: flex;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 3rem;
+  height: 1rem;
+
   flex-direction: column;
 }
-.card1 {
 
+.italy-pic {
+  background-size: cover;
+  width: fit-content;
+  height: 24rem;
 }
-.cardtour {
-  margin-top: 4rem;
-  margin-left: -40rem;
-  flex-direction: row;
+
+.lineff {
+  font-size: 4rem;
 }
-.sidetour {
+
+.footer {
   display: flex;
-  margin-left: 10rem;
+  background-color: #0d0c0c;
+  color: #f8f4f4;
   flex-direction: row;
-  width: 3rem;
+  justify-content: space-evenly;
+}
+.footer1 {
+  background-color: #090000;
+  color: #c95858;
+}
+
+.email1 {
+  display: flex;
+  background-color: #e8e3e3;
+}
+
+.pay {
+  display: flex;
+  place-items: 3rem;
+  justify-content: space-evenly;
+  font-size: 5rem;
+}
+
+.aa {
+  width: 14rem;
+  height: 3rem;
+  border-radius: 1em;
+}
+
+.aa1 {
+  width: 14rem;
+  height: 3rem;
+  border-radius: 1em;
+}
+
+.navemail {
+  justify-content: center;
+  font-size: 1.6em;
+  margin-left: 10.1rem;
+}
+.navicon {
+  color: #c29d59;
+}
+.upper {
+  background-color: #262626;
+  width: 100%;
+}
+.navspace {
+  color: #262626;
+}
+.iconn {
+  color: #c29d59;
+}
+.naviconfb {
+  width: 12rem;
+  font-size: 2.7rem;
+  margin-left: 90rem;
+  margin-top: -2.1rem;
+}
+.whitee {
+  color: white;
+  margin-bottom: 3rem;
+  justify-content: space-evenly;
+}
+.white-nav {
+  background-color: #f8dddd;
+  margin-top: 0.2rem;
+  height: rem;
+  width: 83rem;
+  margin-left: 18rem;
+}
+.modalicon {
+  font-size: 5rem;
+  margin-left: 67rem;
+  margin-top: -7rem;
+  width: 12rem;
+  height: 6rem;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.openmodal {
+  background-color: #0c0b0b;
+  height: 100rem;
+  width: 112rem;
+  margin-top: -50rem;
+}
+.navwhite {
+  height: 8rem;
+  width: 84rem;
+  margin-left: 15rem;
+  border-radius: 3rem;
+  margin-top: -1rem;
+  color: #edf2f6;
+}
+
+.home:hover {
+  color: #ff9900;
+}
+
+.navhome:hover {
+  color: #ff9900;
+}
+
+.navhome {
+  margin-left: 5rem;
+
+  margin-top: 40rem;
+
+  width: 23rem;
+  padding: 20rem 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-
-
+  align-items: center;
+  transition: color 0.3s;
 }
-.navtour {
+
+.home {
+  width: 90rem;
+  font-size: 2rem;
+  margin-left: 41rem;
+  color: white !important;
+  margin-top: 6rem;
+  height: 4rem;
+  text-decoration: none;
+  width: 4rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.closebtnmodal {
+  font-size: 7rem;
+  margin-left: 100rem;
+  margin-top: -10rem;
+}
+
+.form {
   display: flex;
-  flex-wrap: wrap;
-  flex-wrap: wrap;
-
-}
-.cardtour1 {
-  margin-left: -120rem;
-  padding: 4rem;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  margin-left: 40rem;
+  margin-top: 10rem;
 }
 
-.side11tour {
+.listf {
+  font-size: 25px;
+}
+
+.linefupdate {
+  font-size: 3rem;
+  margin-left: 1rem;
+  color: #c29d59;
+  justify-content: space-evenly;
+}
+.help2 {
+  font-size: 2em;
+  margin-top: 2rem;
+}
+.bold {
+  font-size: 3rem;
+  margin-left: -0rem;
+}
+.b {
+  font-size: 5rem;
+  color: #c29d59;
+}
+.i {
+  font-size: 1.3rem;
+}
+.tourlistimg {
+  width: 100%;
+}
+
+.choosetr {
+  display: flex;
+  justify-content: space-between;
   padding: 3rem;
 }
-.italy-pic1 {
-  background-size: cover;
-  height: 24rem;
-  width: 13rem;
-}
-
-.italy-pic2 {
-  background-size: cover;
-  height: 24rem;
-  width: 13rem;
-}
-.italy-pic3 {
-  background-size: cover;
-  height: 20rem;
-  width: 13rem;
-}
-
-.side111tour {
-  margin-left: 4rem;
-}
-
-.imgtrip1 {
-  width: 20rem;
-}
-
-.tripimg {
+.formtr {
   display: flex;
-  justify-content: space-evenly;
-  gap: 4rem;
-  width: 50%;
-  height: 50%;
-  flex-wrap: wrap;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #ffff;
 }
 
-.tripimg1 {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 4rem;
-  width: 50%;
-  height: 50%;
-  flex-wrap: wrap;
-  background-color: #c29d59;
-}
 
-.btntour {
-  display: flex;
-  width: 10rem;
-  height: 3rem;
-  margin-left: 30rem;
-  margin-top: -9rem;
-  display: flex;
-  flex-direction: column;
-}
-.countrytour {
-  font-size: 3rem;
-  background-color: #c29d59;
-  margin-left: -7rem;
-  width: 6rem;
-}
-.ptour {
-  font-size: 24px;
-  width: 30rem;
-}
-.ffff {
-  color: #ffffff;
-}
-
-.btntour1 {
-  
-  display: flex;
-  width: 20rem;
-  height: 10rem;
-  display: flex;
-  flex-direction: column;
-  padding-top: 2rem;
-}
-.btntour2 {
-  flex-wrap: wrap;
-  padding-bottom: 39rem;
-  display: flex;
-  width: 20rem;
-  height: 10rem;
-  display: flex;
-  flex-direction: row;
-  padding-top: 25rem;
-}
-.btntour1 img {
-  height: 24rem;
-}
-.btntour2 img {
-  height: 26rem;
-  margin-left: -12rem;
-}
-
-.btntour3 img {
-  height: 26rem;
-  margin-left: 13rem;
-  margin-top: -39rem;
-  width: 20rem;
-}
-
-.tour1100 {
-  margin-left: -8rem;
-}
-.tour11000 {
-  margin-left: 14rem;
-  margin-top: -14rem;
-}
-.btntour3 {
-  flex-wrap: wrap;
-  padding-bottom: 100rem;
-  display: flex;
-  width: 20rem;
-  height: 10rem;
-  display: flex;
-  flex-direction: row;
-  padding-top: 0rem;
-}
-.countrytour1 {
-  font-size: 3rem;
-  background-color: #c29d59;
-  margin-left: -29rem;
-  width: 6rem;
-}
-
-.ptour1 {
-  font-size: 20px;
-  width: 30rem;
-  margin-left: -28rem;
-}
-
-.btnt {
-  font-size: 2rem;
-  color: #f1e9e9;
-  background-color: #c29d59;
-  border-radius: 0.5rem;
-}
-.formtour {
-  border: 1px solid rgb(8, 8, 8);
-  width: 30%;
-  height: 40rem;
-  margin-top: -185rem;
-  margin-left: 55rem;
-  margin-bottom: 4rem;
-}
-
-.formtour h1 {
-  font-weight: bold;
-  font-size: 1.5em;
-  margin: 0;
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.search label {
-  background-color: #b39154;
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 5px 0 0 5px;
-  cursor: pointer;
-}
-
-input.noborder {
-  border: none;
-  border-radius: 0 5px 5px 0;
-  padding: 8px;
-  width: 100%;
-}
-
-select.noborder {
-  border: none;
-  border-radius: 5px;
-  padding: 8px;
-  width: 100%;
-}
 
 input[type="submit"] {
   background-color: #be9b5b;
   color: #fff;
   border: none;
-  margin-left: 12rem;
+  margin-left: 2rem;
   border-radius: 5px;
   padding: 10px 20px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
+  font-size: 2rem;
 }
 input[type="submit"]:hover {
   color: white;
@@ -945,7 +930,6 @@ form {
   gap: 3rem;
 }
 
-
 .submitfindnow {
   margin-top: -9rem;
   margin-left: 22rem;
@@ -994,11 +978,6 @@ form {
   margin-left: -9rem;
 }
 
-.pii {
-  width: 114rem;
-  height: 40rem;
-  border-radius: 2rem;
-}
 .homefirstc {
   padding: 23rem;
   margin-left: 20rem;
@@ -1033,7 +1012,7 @@ form {
 }
 .btninfor {
   padding: -30rem;
-  margin-top: -9rem;
+  margin-top: -1rem;
   width: 80rem;
   height: 6rem;
   margin-left: 2rem;
@@ -1071,7 +1050,8 @@ form {
             padding: 4px;
             
         } */
-*/ .container {
+
+.container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -1083,12 +1063,12 @@ form {
   gap: 10px;
 }
 
-.cell {
+/* .cell {
   padding: 40px;
   font-size: 1.2rem;
   background: #fff;
   border: 1px solid rgb(237, 227, 227);
-}
+} */
 .footerd {
   margin-left: 1rem;
   width: 95rem;
@@ -1103,19 +1083,21 @@ form {
 }
 
 .formd {
-  width: 31rem;
+  width: 40rem;
   height: 49rem;
   background-color: #f6f4f4;
   margin-left: 60rem;
-  margin-top: -100rem;
+  margin-top: -107rem;
   border: 1px solid rgb(16, 182, 55);
 }
 
 .fullName {
   font-size: 1.8rem;
 }
-.fullName1 {
+.fullName1detailtour {
   font-size: 2rem;
+  margin-top: 4rem;
+  margin-left: 3rem;
 }
 
 .formsidedetails {
@@ -1135,15 +1117,6 @@ form {
   flex-direction: column;
 }
 
-/* body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        } */
 .loginwidth {
   width: 20rem;
   margin-left: 4rem;
@@ -1152,7 +1125,7 @@ form {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   width: 30rem;
   padding: 7rem;
 }
@@ -1166,7 +1139,7 @@ form {
 .login-container input[type="password"] {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -1175,7 +1148,7 @@ form {
   margin-left: -1rem;
   width: 10rem;
   padding: 10px;
-  background-color: #007bff;
+
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -1183,12 +1156,13 @@ form {
 }
 
 .login-container input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0a0a0a;
 }
 
 .imglogin {
-  margin-left: 31rem;
-  margin-top: -20rem;
+  margin-left: 25rem;
+  margin-top: -36rem;
+  width: 35rem;
 }
 .alllogin {
   background-color: #edeff3;
@@ -1210,8 +1184,8 @@ form {
 }
 .dash1 {
   background-color: #ffffff;
-  width: 20rem;
-  height: 47rem;
+  width: 0rem;
+  height: 0rem;
 }
 
 .photoicon {
@@ -1397,26 +1371,14 @@ td.actions a + a {
   background-color: #d5e0eb;
 }
 
-@media (max-width: 400px) {
-  /* Adjust styles further for even smaller screens */
-  .form {
-    width: 100%;
-  }
-  .side {
-    width: 100%;
-  }
-  .card {
-    width: 100%;
-  }
-}
+
+
 
 .loginicon {
   font-size: 1rem;
   border-radius: 1rem;
 }
-.loginicon:hover {
-  background-color: #007bff;
-}
+
 .dashtable {
   margin-left: 27rem;
 
@@ -1457,18 +1419,10 @@ td.actions a + a {
   margin-top: -44rem;
   margin-left: -56rem;
 }
-.thisisdashboard:hover{
+.thisisdashboard:hover {
   color: greenyellow;
 }
-/* .dashtable tr {
-    border: 1px solid #eae7e7; 
-    padding: 2px;
-    text-align: center;
-  } */
 
-/* .titletable{
-    display: flex;
-  } */
 
 .dashtable,
 .dashtable th,
@@ -1497,12 +1451,6 @@ td.actions a + a {
   margin-top: -3rem;
   margin-left: 6rem;
 }
-.hidesignup {
-  background-color: #050505;
-  width: 99.3rem;
-  margin-top: -3rem;
-  margin-left: 6rem;
-}
 
 .backhome {
   font-size: 2rem;
@@ -1522,12 +1470,19 @@ td.actions a + a {
   border-radius: 1rem;
 }
 .addtoursin {
-  font-size: 2.1rem;
-  width: 14rem;
-  color: #fff;
-  height: 4rem;
-  border-radius: 1rem;
-  background-color: #b39154;
+ display: flex;
+ flex-direction: row;
+ gap: -2em;
+ background-color: #a98942;
+ color: rgb(11, 11, 11);
+ border-radius: 1em;
+ width: 14rem;
+ margin-top: 2em;
+}
+
+.addtoursin:hover{
+  background-position-x: right;
+  background-color: #fbf8f8;
 }
 .anyday {
   margin-left: 2rem;
@@ -1551,14 +1506,11 @@ td.actions a + a {
   margin-right: 20px;
 }
 
-
-
 label {
   display: block;
   margin-bottom: 98px;
   font-weight: bold;
 }
-
 
 input[type="text"],
 input[type="email"],
@@ -1567,11 +1519,10 @@ textarea,
 select {
   width: 100%;
   padding: 10px;
-  
+
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-
 
 .tourdashbtn {
   background-color: #007bff;
@@ -1582,16 +1533,17 @@ select {
   font-size: 2rem;
 }
 .formtourupdate {
-  background-color: #007bff;
-  width: 40rem;
-  height: 50rem;
-  margin-top: -190rem;
+  width: 43rem;
+
+  margin-top: -185rem;
   margin-left: 60rem;
   text-align: center;
 }
+.formtourupdate:hover {
+  background-color: #dfd0d0;
+}
 
 .activities {
-  
   width: 3rem;
   height: 22rem;
   margin-left: -18rem;
@@ -1599,8 +1551,7 @@ select {
   padding: 19rem;
   margin-top: -18rem;
 }
-.backdropdest{
-  
+.backdropdest {
   height: 5rem;
   border-radius: 5px;
   width: 10rem;
@@ -1614,301 +1565,53 @@ select {
 }
 
 .choosephoto {
-
-font-size: 2rem;
+  font-size: 2rem;
   width: 18rem;
   height: 2rem;
   margin-top: 0rem;
-  
 }
 
 .choosephoto:hover {
   color: #b39154;
 }
 
-.choosephotobtn{
-font-size: 25px;
-margin-top: 2rem;
+.choosephotobtn {
+  font-size: 25px;
+  margin-top: 2rem;
+}
+
+.img-home {
+  display: flex;
+  flex-direction: column;
+  background-color: #007bff;
+}
+
+.home-life {
+  background-color: rgb(250, 246, 246);
+  font-weight: bold;
 }
 
 
+.addTourForm{
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30rem 50px ;
+}
 
+.addTourbutton{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: center;
+  background-color: #c29d59;
+}
 
-/* My resiponsiveness */
-/* My resiponsiveness */
-/* My resiponsiveness */
-/* My resiponsiveness */
-/* My resiponsiveness */
-/* My resiponsiveness */
-/* My resiponsiveness */
-
-
-/* CSS for Mobile Screens */
-/* @media (max-width: 768px) {
-  .headerl {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu2 {
-    flex-direction: row;
-    align-items: flex-start;
-    margin-top: 80px;
-  }
-
-  .menu2 li {
-    margin-right: -9%;
-    margin-bottom: 10px;
-  }
+.addTourbutton:hover{
+background-color: white;
+transition-duration: 3sec;
 }
 
 
-
-@media (max-width: 768px) {
-  .headee2 {
-    flex-direction: row;
-  }
-
-  .email,
-  .phone {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 800px) {
-  .menu2 {
-    flex-direction: row;
-    padding: 1rem;
-    justify-content: space-evenly;
-  }
-
-  .menu2 li {
-    margin: -5px 0;
-    justify-content: space-evenly;
-    text-align: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .pi {
-    max-width: 100%;
-    height: auto;
-    width: 64rem;
-    border-radius: 1rem;
-  }
-
-  .homefirst {
-    font-size: 44px;
-    margin-left: -55rem;
-    margin-top: -9rem;
-  }
-
-  .homefirst1 {
-    font-size: 38px;
-    margin-left: 1rem;
-  }
-  .homefirst1:hover {
-    color: #b39154;
-  }
-  .homefirst:hover {
-    color: #ed0d0d;
-  }
-
-  .homefirst2 {
-    font-size: 22px;
-    margin-left: 4rem;
-    margin-top: -5rem;
-  }
-  .homefirst2:hover {
-    color: #dbee08;
-  }
-}
-
-@media (max-width: 768px) {
-  .choose {
-    text-align: center;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -19rem;
-    margin-left: 10rem;
-    gap: -4rem;
-  }
-
-  .choose label {
-    font-size: 23px;
-    margin-left: -3rem;
-  }
-
-  .choose input,
-  .choose select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    margin-left: -4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .side {
-    flex-direction: row;
-    flex-direction: row;
-    margin-top: -10rem;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about {
-    margin-left: -24rem;
-    margin-top: 27rem;
-  }
-  .side {
-    display: flex;
-  }
-
-  .side img {
-    max-width: 100%;
-    margin-top: -29rem;
-    height: auto;
-  }
-
-  .sidee {
-    margin-top: 40px;
-  }
-
-  .plan {
-    font-size: 34px;
-    margin-left: -31rem;
-  }
-
-  .p {
-    font-size: 18px;
-    margin-left: -39rem;
-    margin-top: -3rem;
-    width: 57rem;
-  }
-
-  .click11 {
-    width: 10rem;
-    height: rem;
-    margin-top: -40px;
-    margin-left: -15rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .side11 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    margin: 10px 0;
-    text-align: center;
-    margin-left: -93rem;
-  }
-
-  .card img {
-    max-width: 20rem;
-    height: auto;
-  }
-
-  .onp {
-    font-size: 30px;
-    margin-left: 4rem;
-  }
-
-  .delete1 {
-    font-size: 14px;
-    margin-left: -19rem;
-  }
-
-  .booknow {
-    width: 50%;
-    margin-left: 2rem;
-    margin-right: 1rem;
-  }
-
-  .btn-i {
-    margin-left: 3rem;
-  }
-  .italy-pic {
-    margin-left: 6rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer2 {
-    text-align: center;
-    margin-left: 27rem;
-    flex-direction: row;
-  }
-  .footer {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-  }
-  .bold {
-    margin-left: -10rem;
-  }
-  .i {
-    margin-left: -7rem;
-  }
-  .iresponse {
-    margin-left: -4rem;
-  }
-  .aa {
-    margin-left: -3rem;
-  }
-  .listf {
-    text-align: center;
-  }
-
-  .helpff {
-    text-align: center;
-    margin-top: 55rem;
-  }
-  .respfooter {
-    margin-left: -9rem;
-  }
-  .footer12 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .navigation {
-    margin-top: 610px;
-    margin-left: -20rem;
-  }
-
-  .pay {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 708px) {
-  .testmony1 {
-    text-align: center;
-    margin-top: 73rem;
-  }
-
-  .imagetestmony {
-    display: block;
-    margin: 4 auto;
-    max-width: 80%;
-    height: 90%;
-    margin-left: 0.9rem;
-  }
-} */
-
-
-/* Default styles for the NavBar */
 .navbar {
   background: #333;
   color: white;
@@ -1916,494 +1619,214 @@ margin-top: 2rem;
   flex-direction: column;
   justify-content: space-between;
 
- margin-left: -10rem;
- font-size: 13px;
+  margin-left: -10rem;
+  font-size: 13px;
 }
 
 .navbar a {
   margin-left: 4rem;
-
 }
 
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+.barchartdash {
+    background-color: #007bff;
+    width: 1000px;
+    margin-left: 10rem;
+    margin-top: 5rem;
     
-  }
-
-  .navbar a {
-    margin: 10px 0;
-    text-align: center;
-    
-  }
-
-  /* .naviconfb {
-  
-  margin-top: -3rem;
-  margin-left: 25rem;
-
-  } */
-
-  .navwhite {
-    margin-top: 2rem;
-    margin-left: 9rem;
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: center
-    
-  }
-
-  .modalicon {
-
-margin-left: 7rem;
-margin-top: 2rem;
-  }
-
-.pi {
-  margin-top: 4rem;
-  background-color: white;
-
 }
 
-  .closebtnmodal {
-    margin-top: 8rem;
-    margin-left: 2%;
-    font-size: 7rem;
-  background-color: #9dff00;
-    
-  }
+.lifeisshort {
+    font-size: 10rem;
+    margin-top: -30rem;
+    margin-left: 49rem;
+    color: white;
 }
 
-
-
-
-
-/* @media screen and (max-width: 768px){
-
-
-  }
-
-/* .homefirst1 {
-  font-size: 20px;
-
-  margin-top: -40rem;
-  margin-left: 6rem;
+.theworldiswide {
+    font-size: 4rem;
+    color: #b39154;
+    margin-left: 60rem;
+}
+.homefirst21000 {
+font-size: 2rem;
+margin-left: 50rem;
 }
 
-.homefirst1:hover {
-  color: #050505;
-}
-.homefirst2 {
-  display: flex;
-  flex-direction: row;
-  width: 16rem;
-  font-size: 1.2rem;
-  color: white;
-  margin-left: 4rem;
-  margin-top: -8rem;
-
-}
-.homefirst2:hover {
-  color: #050505;
+.contactcss {
+    font-size: 6rem;
+    margin-top: -28rem;
+    color: white;
 }
 
-.form {
-  margin-top: -18rem;
-  margin-left: 4rem;
+.getaquestion {
+font-size: 2rem;
+margin-left: 35rem;
+margin-top: -21rem;
+background-color: #bf9e61;
 }
 
-.side {
-  width: 30%;
-} */ 
-   
-
-
-
-
-
-
-@media screen and (max-width: 767px) {
-  form {
-    margin-top: -18rem;
-  margin-left: 4rem;
-  }
-
-  .side {
-    /* Apply your mobile-specific styles here */
-  }
-
-
-  .homefirst1 {
-  font-size: 20px;
-
-  margin-top: -40rem;
-  margin-left: 6rem;
-}
-
-.homefirst1:hover {
-  color: #050505;
-}
-.homefirst2 {
-  display: flex;
-  flex-direction: row;
-  width: 16rem;
-  font-size: 1.2rem;
-  color: white;
-  margin-left: 4rem;
-  margin-top: -8rem;
-
-}
-.homefirst2:hover {
-  color: #050505;
-}
-
-.form {
-  margin-top: -18rem;
-  margin-left: 4rem;
-}
-
-.side {
-
-  width: 40rem;
-  height: 27rem;
-  margin-top: -8rem;
-  
-  display: flex;
-  flex-direction: column;
-  margin-left: -8rem;
-
-} 
-
-.about {
-  margin-left: 7rem;
-}
-
-.plan {
-  margin-left: -3rem;
+.whybookwithus{
   font-size: 2rem;
-}
-.click11 {
-  margin-left: 6rem;
-}
-
-.p1 {
-  margin-top: 116rem;
+ margin-left: 83rem;
+ margin-top: -26rem; 
+ gap: 3em;
 
 }
 
+
+
+
+
+.tourlistcss {
+  
+  font-size: 7rem;
+  margin-top: -3rem;
+  color: #f6f0f0;
+}
+
+.imgsignuptail{
+ margin-left: 24rem;
+ margin-top: -35rem;
+ 
+}
+
+
+@media (max-width: 700px) {
+  /* Adjust the container for screens with a maximum width of 400px */
+  .navbarContainer {
+    padding: 30px;
+  
+  }
+
+  .lifeisshort {
+    display: none;
+}
+ 
+
+.theworldiswide {
+    display: none;
+}
+.homefirst21000 {
+margin-top: -30rem;
+margin-left: 3rem;
+color: white;
+}
+
+.homefirst21000:hover {
+background-color: #a98942;
+}
 
 .card {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.nav2 {
   display: flex;
   flex-direction: column;
 }
 
-.side11 {
-  flex-direction: column;
-  margin-left: -4rem;
-  
+.cardsmall {
+  margin-top: 95rem;
+  margin-left: -116rem;
+  width: 23rem;
 }
 
-.onp{
-  width: 25rem;
+.crad3small {
+  margin-top: 95rem;
+  margin-left: -206rem;
+   width: 23rem;
 }
+
 
 .testmony {
-  margin-top: 80rem;
+display: none;
+  
+
+}
+
+
+.testmony1{
+  display: none;
+}
+
+.imagetestmony{
+  display: none;
+}
+.test2{
+  display: none;
+}
+.lineff {
+  display: none;
+}
+.linebottom{
+  display: none;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 110rem;
+
+}
+
+.abc {
+  display: flex;
+  flex-direction: column;
+}
+.clicktop {
+  display: none;
+}
+
+.massege{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.img-contact{
+  margin-top: 3rem;
+  margin-left: -80rem;
+}
+.contactcss{
+  margin-right: 80rem;
+}
+
+.contactformsmall {
+  margin-top: 11em;
+}
+
+.getaquestion{
+  margin-top: 5rem;
+  margin-left: .7em;
+  width: 30rem;
+}
+
+
+.whybookwithus{
+ background-color: #b8c0c8;
+ margin-left: 1.3rem;
+ margin-top: 3rem;
+ width: 30rem;
+}
+
+.whybookwithussmal{
+  margin-left: 34rem;
   width: 3rem;
-  height: 14rem;
+
+
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav {
-  font-size: 3rem;
-  margin-top: 3rem;
-  
 }
 
 
 
-.pii {
-  width: 22rem;
-  height: 20rem;
-  
-}
-.homefirstc {
-  font-size: 3rem;
-  
-  margin-top: -34rem;
-  margin-left: -15rem;
-}
-
-.Masseges {
-  flex-direction: column;
-}
-
-.formt1co{
-  margin-left: -2rem;
-  width: 22rem;
-  height: 32rem;
-}
-
-.formt1cont {
-  margin-left: -3rem;
-  width: 22rem;
-  height: 32rem;
-}
-
-.footer {
-  flex-direction: column;
-}
-.bold {
-  margin-left: -2rem;
-}
-
-.footer2 {
-  margin-left: 2rem;
-}
-
-.contactresp {
-  flex-direction: column;
-  width: 7rem;
-}
-
-.pay {
-  flex-direction: column-reverse;
-}
-
-.navigation {
-
-  margin-left: 2rem;
-}
-
-.helpff {
-  margin-left: 2rem;
-}
-
-.footerrensp {
-  background-color: #007bff;
-  font-size: 5rem;
-}
-
-
-/* on tourlist */
-/* on tourlist */
-/* on tourlist */
-/* on tourlist */
-
-.tourlistimg {
-  width: 22rem;
-  height: 12rem;
-  margin-left: 1rem;
-  margin-top: 3rem;
-}
-
-.tourform {
-  margin-top: 18rem;
-  display: flex;
-  flex-direction: column;
-  margin-left: -6rem;
-}
-
-.choosetr {
-  display: flex;
-  margin-top: 2rem;
-  flex-direction: column;
-
-}
-
-.formtr {
-  display: flex;
-  flex-direction: column;
-  margin-top: rem;
-  margin-left: 7rem;
-}
-
-.destinationtr {
-  margin-top: -4rem;
-}
-
-.releasedateresp{
-  margin-top: -6rem;
-
-}
-
-.tripimg {
-  margin-top: -8rem;
-  margin-left: 10rem;
-  display: flex;
-  flex-direction: column;
-  gap: -8rem;
-  justify-content: space-evenly;
-}
-
-.btntour1{
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  margin-top: 9rem;
-  margin-left: -3rem;
-}
-.imgtrip1 {
-
-  width: 12rem;
-  margin-left: 3rem;
-  justify-content: space-evenly;
-
-}
-.tour110{
-  
-  margin-top: 2rem;
-  margin-left: 2rem;
-  width: 18rem;
-  height: 4rem;
-}
-.btnt {
-  background-color: #007bff;
-  margin-left: -2.8rem;
-}
-.onlineresp {
-  margin-top: -9rem;
-  font-size: 1.5rem;
-  flex-direction: column;
-  
-}
-.triping2 {
-  margin-left: 11.9rem;
-  
-  margin-top: -11rem;
-  
-}
 
 
 
-.linkcontactresp {
-  font-size: 2rem;
-  margin-top: 2rem;
-}
-
-/* for tour details */
-/* for tour details */
-/* for tour details */
-/* for tour details */
-
-.btninfor1 {
-
-  margin-top: 3rem;
-
-  display: flex;
-  flex-direction: column;
-  
-}
-.allptd {
-
-  margin-top: 42rem;
-}
-.pa {
-  font-size: 2rem;
-  width: 25rem;
-}
-.imgtrip1de {
-  margin-left: -0.1rem;
-  width: 24rem;
-}
-
-.allptourdetailsrespo {
-  width: 20rem;
-  margin-left: 2rem;
-}
-.videoresp {
-  width: 22rem;
-  margin-left: 1rem;
-}
-.container {
-  width: 20rem;
-}
-
-.formd {
-  
-  margin-left: 1rem;
-  margin-top: 8rem;
-  width: 20rem;
-}
-
-.fullName1 {
-  margin-top: 3rem;
-}
+ @media (max-width: 700px) {
+    .menumustbeblack {
+      
+      width: 100%; /* Take full width of the screen */
+      display: flex;
+      flex-direction: column;
+      background-color: #17d236;
+    }
 
 
-/* signup */
-/* signup */
-/* signup */
-/* signup */
-.alllogin {
-margin-top: 15rem;
-margin-left: -1rem;
-width: 2rem;
-}
-.imgsign1 {
-margin-left: -1rem;
-
-}
-.hidesignup {
-  margin-top: -4rem;
-  margin-left: 30rem;
-}
-
-.hidelogin {
-  margin-left: 30rem;
-}
-
-.loginwidth {
-  margin-top: -25rem;
-}
-.underloginresp {
-  margin-top: 3rem;
-}
-
-.loginrespo {
-  
-  
-
-}
-
-.alldash{
-
-  width: 20rem;
-  height: 53rem;
-}
-
-.dash1{
-  margin-top: 6rem;
-  margin-left: 1rem;
-  width: 14rem;
-}
-.dashtable {
- margin-left: 3rem;
- margin-top: 40rem; 
- width: 10rem;
- height: 30rem;
-}
-
-.titletable {
-  width: 2px;
-  max-width: 2px;
-  
-
-}
-}
-
-
-
+  }

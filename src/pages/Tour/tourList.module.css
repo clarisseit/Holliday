@@ -1,0 +1,190 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.topContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 5rem;
+  gap: 1rem;
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #fff;
+  margin-top: -3rem;
+  padding: 60px;
+  box-shadow: 1px 1px 20px 1px gray;
+}
+
+.sortContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 20px 0;
+
+}
+
+.center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+input[type="center"]:hover {
+  color: white;
+  
+}
+
+.center:-ms-input-placeholder{
+  
+}
+
+.sortSelector {
+  border-left: 1px solid #000;
+  input[type="submit"]:hover {
+  color: white;
+}
+}
+
+.centerPrice {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border: #000;
+
+}
+
+.sortSelectorPrice {
+ border-top: #000;
+ 
+}
+
+.tourContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.tourImageContainer {
+  display: flex;
+  max-width: 20rem;
+ 
+}
+
+.tourImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+ 
+}
+
+.formInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.inputIcon {
+  font-size: 2rem;
+  color: #BE9B5B;
+}
+
+.input {
+  outline: none !important;
+  border: none !important;
+  font-size: 2rem;
+}
+
+
+.tourlistcss {
+  background-color: black;
+  font-size: 7rem;
+  margin-top: -23rem;
+  color: #fff;
+}
+
+.sortContainerMonth {
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+
+
+/* ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhh */
+
+
+
+
+ @media (max-width: 700px) {
+    .rightContainer{
+      
+      width: 100%; /* Take full width of the screen */
+      display: flex;
+      flex-direction: column;
+      background-color: #ecf2ed;
+      margin-top: 227rem;
+      margin-left: -28rem;
+    }
+
+    .activitiessmall{
+      background-color: #BE9B5B;
+      display: flex;
+      flex-direction: column;
+      display: none;
+    }
+
+    .linebottom{
+  display: none;
+}
+
+.none{
+  display: none;
+}
+
+.footer{
+
+}
+
+.topContainer{
+
+}
+
+.respfooter{
+  margin-top: 4rem;
+}
+    
+
+  }
+
+
+

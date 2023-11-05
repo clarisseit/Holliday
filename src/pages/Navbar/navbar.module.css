@@ -1,0 +1,121 @@
+.navbarContainer {
+  flex: 1;
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 100px;
+}
+
+.navbarTop {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbarTop .left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbarTop .right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navIcon {
+  font-size: 30px;
+  color: #c29d59;
+}
+
+.navIcon:hover {
+  font-size: 30px;
+  color: #000;
+}
+
+.contactItem {
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.borderRight {
+  border-right: 1px solid #f2f2f2;
+}
+
+.contactItem:hover {
+  background-color: #fff;
+}
+
+.contactItem:hover .navIconLink {
+  color: #000;
+}
+
+.contactItem:hover .navIcon {
+  color: #000;
+}
+
+.navIconLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.socialIconContainer {
+  padding: 15px;
+  text-decoration: none;
+}
+
+.socialIcon {
+  color: #c29d59;
+  font-size: 30px;
+}
+
+.socialIconContainer:hover {
+  background-color: #fff;
+}
+
+.socialIconContainer:hover .socialIcon {
+  color: #000;
+}
+
+.navhome {
+}
+
+.navbarBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.rightButtonsContainer {
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+}
+
+
+
+
+/* Responsive adjustments for small devices */
+@media (max-width: 700px) {
+  /* Hide the specified section on screens with a maximum width of 400px */
+  .navbarTop {
+    display: none;
+    background-color: aqua;
+  }
+.navbarTop .right {
+display: none;
+}
+
+
+}
+
