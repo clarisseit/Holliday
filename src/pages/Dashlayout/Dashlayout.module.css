@@ -1,0 +1,39 @@
+.bgYellow {
+  display: flex;
+  flex: 1;
+  background-color: yellow;
+  height: 100vh;
+}
+
+.bgBlueRight {
+  flex: 1;
+  background-color: blue;
+}
+
+.bgRedLeft {
+  flex: 5;
+  background-color: red;
+}
+
+.dashbordMenu{
+    
+    
+}
+
+.imgContact{
+    
+}
+
+.dashbordMenuText {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.dashbordMenuText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}

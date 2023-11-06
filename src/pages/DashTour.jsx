@@ -118,7 +118,7 @@ export default function () {
                   <td>{item.Duration}</td>
                   <td>{item.destination}</td>
                   <td>{item.GroupSize}</td>
-                  <td>{item.price}</td>
+                  <td>{item.Price}</td>
                   <td>{item.action}</td>
                   <td>
                     <div className="actions">

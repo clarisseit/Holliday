@@ -97,21 +97,24 @@ export default function () {
         <table className="dashtable">
           <tbody>
             <tr>
-              <td>Tour Id</td>
-              <td>User Id</td>
-              <td>isPayed</td>
-              <td>Payment Method</td>
+              <td>FullName</td>
+              <td>Email</td>
+              <td>PhoneNumber</td>
+              <td>Date</td>
+              <td>NumberOfTickets</td>
 
               <td>Actions</td>
             </tr>
             {tours.map((item) => {
               return (
-                <tr className="titletable">
-                  <td>{item.tourID}</td>
-                  <td>{item.userID}</td>
-                  <td>{item.isPayed}</td>
-                  <td>{item.paymentMethod}</td>
-
+                <tr className=" flex gap-10 text-center ">
+                  <td className=" flex flex-row text-center">
+                    {item.fullname}
+                  </td>
+                  <td>{item.email}</td>
+                  <td>{item.phone}</td>
+                  <td>{item.date}</td>
+                  <td>{item.numberOfTickets}</td>
                   <td>
                     <div className="actions">
                       <button

@@ -111,15 +111,11 @@ export default function Dashboard() {
         <h2 className=" flex text-center font-bold ml-100 text-4xl hover:text-orange-300">
           Hello Clarisse!!!!!!
         </h2>
-        <Link to="/DashMenu">
-          <p className=" flex flex-row font-bold gap-3 text-4xl text-custom">
-            Dashboard Menu <BiMenuAltRight />
-          </p>
-        </Link>
-        <Link to="/">
-          <p className="backhome">Go back to home</p>
-        </Link>
-       
+        
+        {/* <Link to="/Dashboard">
+          <p className="">Go back to home</p>
+        </Link> */}
+
         <h2> </h2>
         <div className={styles.container}>
           <div className={styles.topcontainer}>

@@ -12,6 +12,7 @@ import { ImLocation } from "react-icons/im";
 import { FaGreaterThan } from "react-icons/fa";
 import FormDash from "./pages/FormDash";
 import Booking from "./pages/Booking";
+import Dashboard from "./pages/Dashlayout/Dashboard";
 import EditBooking from "./pages/EditBooking";
 
 import EditTour from "./pages/EditTour";
@@ -19,6 +20,7 @@ import EditUser from "./pages/EditUser";
 import Menu from "./pages/menu";
 import DashMenu from "./pages/DashMenu";
 import UserDash from "./pages/UserDash";
+
 import "./App.css";
 import TourList from "./pages/Tour/TourList";
 import TourDetail from "./pages/TourDatail/TourDetail";
@@ -709,10 +711,6 @@ function App() {
               element={<DashTour />}
             />
             <Route
-              path="/Booking"
-              element={<Booking />}
-            />
-            <Route
               path="/FormDash"
               element={<FormDash />}
             />
@@ -729,9 +727,29 @@ function App() {
               element={<EditUser />}
             />
             <Route
-              path="/UserDash"
-              element={<UserDash />}
-            />
+              path="/Dashboard"
+              element={<Dashboard />}
+            >
+              <Route
+                path="User"
+                element={<UserDash />}
+              />
+
+              <Route
+                path="Booking"
+                element={<Booking />}
+              />
+
+              <Route
+                path="Tour"
+                element={<DashTour />}
+              />
+
+              <Route
+                path="Dashboard"
+                element={<Dash />}
+              />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AppContext.Provider>

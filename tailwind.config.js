@@ -12,14 +12,19 @@ export default {
       },
       lineHeight: {
         50: "5rem",
-        
       },
       colors: {
         custom: "#B59457",
         custom1: "#F6F6F6",
       },
 
-     
+      margin: {
+        "80rem": "80rem",
+      },
+
+      mt: {
+        150: "75rem",
+      },
     },
   },
   variants: {},

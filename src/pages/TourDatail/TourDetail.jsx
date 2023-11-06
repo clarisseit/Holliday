@@ -16,6 +16,13 @@ import { BiEnvelope } from "react-icons/bi";
 import { BsTelephoneFill } from "react-icons/bs";
 import { CgCalendarDates } from "react-icons/cg";
 import { BiSolidMap } from "react-icons/bi";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { GrGroup } from "react-icons/gr";
+import { MdOutlineGroupAdd } from "react-icons/md";
+import { FiSettings } from "react-icons/fi";
+
+
+
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -127,10 +134,10 @@ const TourDetail = () => {
       >
         <h1 className={styles.topContainettitle}>Tour Detail</h1>
       </div>
-      <div className=" flex">
+      <div className=" flex -mt-4  ">
         <div className=" w-2/3">
           <div className="  p-4 flex ">
-            <div className=" flex flex-row gap-3 justify-center p-6 text-3xl border-black border-2 bg-custom">
+            <div className=" flex flex-row gap-3 justify-center p-1 text-1xl border-black border-1 bg-custom">
               <AiFillInfoCircle />
               Information
             </div>
@@ -156,11 +163,48 @@ const TourDetail = () => {
               A wonderful serenity has <br /> taken possession of my entire
               <br /> soul
             </p>
-            <img
-              src="../public/ondetail.JPG"
-              alt=""
-              className=" w-3/9 ml-9 mr-9"
-            />
+
+            <div className=" flex gap-10 mt-10 bg-custom h-36 text-2xl">
+              <div className="day">
+                <AiOutlineClockCircle className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
+                <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer">
+                  {" "}
+                  2days
+                </p>
+              </div>
+
+              <div className="people">
+                <GrGroup className=" flex text-5xl ml-9 mt-4 bg-white gap-6 cursor-pointer" />
+                <p className=" flex flex-row text-1xl mt-5 ml-7  cursor-pointer">
+                  {" "}
+                  6people
+                </p>
+              </div>
+
+              <div className="peopleplus">
+                <MdOutlineGroupAdd className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
+                <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer">
+                  {" "}
+                  18
+                </p>
+              </div>
+
+              <div className="locationdetail">
+                <ImLocation className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
+                <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer ">
+                  {" "}
+                  Greece
+                </p>
+              </div>
+
+              <div className="discover">
+                <FiSettings className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
+                <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer ">
+                  {" "}
+                  Location
+                </p>
+              </div>
+            </div>
 
             <p className="flex flex-row text-2xl gap-3 ml-9 mt-9 mb-9 mr-7 ">
               I should be incapable of drawing a single stroke at the present
@@ -194,7 +238,7 @@ const TourDetail = () => {
             </video>
           </div>
           <div class="shadow-custom-vertical">
-            <div class=" flex flex-col text-3xl ">
+            <div class=" flex flex-col text-1xl ">
               <div class=" flex flex-row gap-100 shadow-custom leading-50">
                 <div class=" font-bold">Destination</div>
                 <div class=" ">Greece</div>
@@ -231,7 +275,7 @@ const TourDetail = () => {
             </div>
           </div>
         </div>
-        <div className=" w-1/3 flex flex-col border stroke-lime-800 mr-3 ml-6 mb-40 gap-3">
+        <div className=" w-1/3 mt-28 flex flex-col border stroke-lime-800 mr-3 ml-6 mb-40 gap-3">
           <div className="  flex text-2xl  ">
             <div className="mb-9 mt-10 gap-9">
               <h2 className=" text-center text-5xl font-bold mb-24">
