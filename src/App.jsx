@@ -727,21 +727,21 @@ function App() {
               element={<EditUser />}
             />
             <Route
-              path="/Dashboard"
+              path="/dashboard"
               element={<Dashboard />}
             >
               <Route
-                path="User"
+                path="user"
                 element={<UserDash />}
               />
 
               <Route
-                path="Booking"
+                path="booking"
                 element={<Booking />}
               />
 
               <Route
-                path="Tour"
+                path="tour"
                 element={<DashTour />}
               />
 
