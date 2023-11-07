@@ -87,7 +87,7 @@ function App() {
                         <section>
                           <>
                             <img
-                              src="../public/dubai.jpg"
+                              src="/dubai.jpg"
                               alt=""
                               className="img-home"
                             />
@@ -160,7 +160,7 @@ function App() {
                         <form className="home-about">
                           <img
                             className="imghome"
-                            src="../public/home2.JPG"
+                            src="/home2.JPG"
                           ></img>
                           <div className="sidee">
                             <h5 className="about"> | About us</h5>
@@ -208,7 +208,7 @@ function App() {
                               <div className="card">
                                 <img
                                   className="italy-pic"
-                                  src="../public/plae.jpg"
+                                  src="/plae.jpg"
                                 ></img>
                                 <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
                                   ITALY
@@ -236,7 +236,7 @@ function App() {
                                 <div className="cardsmall">
                                   <img
                                     className="italy-pic"
-                                    src="../public/mountain.jpg"
+                                    src="/mountain.jpg"
                                   ></img>
                                   <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
                                     RUSSIA
@@ -266,7 +266,7 @@ function App() {
                                 <div className="card">
                                   <img
                                     className="italy-pic"
-                                    src="../public/image.jpg"
+                                    src="/image.jpg"
                                   ></img>
 
                                   <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
@@ -312,7 +312,7 @@ function App() {
                           <div className="abc">
                             <img
                               className="imagetestmony"
-                              src="../public/testmonyhome.JPG"
+                              src="/testmonyhome.JPG"
                             ></img>
                             <div className="testmony-p">
                               adipisicing elit. Perferendis sapiente tenetur
@@ -481,7 +481,7 @@ function App() {
                   <body>
                     <div className="massege">
                       <img
-                        src="../public/image.jpg"
+                        src="/image.jpg"
                         alt=""
                         className="img-contact"
                       />

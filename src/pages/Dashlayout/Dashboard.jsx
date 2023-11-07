@@ -22,7 +22,7 @@ export default function Dashboard() {
     <div className={styles.bgYellow}>
       <div className={styles.bgBlueRight}>
         <img
-          src="../public/hollidayplanner.JPG"
+          src="/hollidayplanner.JPG"
           alt=""
           className={styles.imgContact}
         />{" "}
