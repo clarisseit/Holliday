@@ -746,7 +746,7 @@ function App() {
               />
 
               <Route
-                path="Dashboard"
+                path="home"
                 element={<Dash />}
               />
             </Route>

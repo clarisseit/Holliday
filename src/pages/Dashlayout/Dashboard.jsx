@@ -32,7 +32,7 @@ export default function Dashboard() {
         <div className={styles.dashbordMenu}>
           <Link
             className={styles.dashbordMenuText}
-            to="/Dashboard/Dashboard"
+            to="/dashboard/home"
           >
             <p className=" flex gap-2">
               {" "}
