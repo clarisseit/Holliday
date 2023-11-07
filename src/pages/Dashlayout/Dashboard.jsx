@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RiDashboardLine } from "react-icons/ri";
 import { MdOutlinePlace } from "react-icons/md";
 import { BiSolidPlaneAlt } from "react-icons/bi";
@@ -13,11 +13,28 @@ import { FaUsers as UserIcon } from "react-icons/fa";
 
 import { Link, Outlet } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 
 import { BiMenuAltRight } from "react-icons/bi";
 import styles from "./Dashlayout.module.css";
 export default function Dashboard() {
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const userString = localStorage.getItem("user");
+  const user = JSON.parse(userString);
+
+  useEffect(() => {
+    console.log(userString);
+    console.log(user);
+
+    if (token && user.role == "user") {
+      navigate("/");
+    } else if (!token) {
+      navigate("/LoginPage");
+    }
+  }, []);
   return (
     <div className={styles.bgYellow}>
       <div className={styles.bgBlueRight}>

@@ -23,6 +23,18 @@ export default function login() {
       },
     })
       .then((response) => {
+        //user
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        const user = localStorage.getItem("user");
+        console.log(user);
+
+        //token
+
+        localStorage.setItem("token", response.data.access_token);
+        const token = localStorage.getItem("token");
+        console.log(token);
+
+        
         console.log(response);
         toast.success("Login successfull");
         localStorage.setItem("token", response.data.access_token);

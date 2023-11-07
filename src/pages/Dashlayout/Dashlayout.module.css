@@ -1,18 +1,18 @@
 .bgYellow {
   display: flex;
   flex: 1;
-  background-color: yellow;
+  
   height: 100vh;
 }
 
 .bgBlueRight {
   flex: 1;
-  background-color: blue;
+  background-color: rgb(224, 224, 243);
 }
 
 .bgRedLeft {
   flex: 5;
-  background-color: red;
+  
 }
 
 .dashbordMenu{
