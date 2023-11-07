@@ -28,7 +28,7 @@ export default function login() {
         localStorage.setItem("token", response.data.access_token);
         setTimeout(() => {
           if (response.data.user.role == "admin") {
-            navigate("/Dash");
+            navigate("/Dashboard");
           } else {
             navigate("/");
           }

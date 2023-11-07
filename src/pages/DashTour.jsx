@@ -75,11 +75,7 @@ export default function () {
       {/* <ArrayTour/> */}
       <div className="alldash">
         <ToastContainer />
-        <Link to="/DashMenu">
-          <p className=" flex flex-row font-bold gap-3 text-4xl text-custom">
-            Dashboard Menu <BiMenuAltRight />
-          </p>
-        </Link>
+       
         <div className="dash1">
           <div className="addtours">
             <Link to="/FormDash">

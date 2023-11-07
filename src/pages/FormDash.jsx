@@ -10,10 +10,20 @@ import { Link, useNavigate } from "react-router-dom";
 const TourForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] =useState("");
   const [duration, setDuration] = useState("");
   const [image, setImage] = useState("");
   const [Price, setPrice] = useState("");
+  const [GroupSize, setGroupSize] = useState("");
+   const [Discount, setDiscount] = useState("");
+    const [TourType, setTourType] = useState("");
+     const [Departure, setDeparture] = useState("");
+      const [Seats, setSeats] = useState("");
+       const [fromMonth, setFromMonth] = useState("");
+        const [toMonth, setToMonth] = useState("");
+        const [departureTime, setDepartureTime] = useState("");
+         const [ReturnTime, setReturnTime] = useState("");
+        
   const handleImage = (e) => {
     e.preventDefault();
     console.log(e.target.files, "file");
@@ -26,6 +36,15 @@ const TourForm = () => {
   formData.append("duration", duration);
   formData.append("destination", destination);
   formData.append("Price", Price);
+  formData.append("GroupSize", GroupSize);
+  formData.append("Discount", Discount);
+  formData.append("Departure", Departure);
+  formData.append("Seats", Seats);
+  formData.append("fromMonth", fromMonth);
+  formData.append("toMonth", toMonth);
+   formData.append("departureTime", departureTime);
+  formData.append("ReturnTime", ReturnTime);
+  
   const handleForm = (e) => {
     //console.log("Hello");
     e.preventDefault();
@@ -88,7 +107,37 @@ const TourForm = () => {
                     className="form-input"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Enter the number of size"
+                    placeholder="Enter the  Title"
+                  />
+
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    Price
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={Price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="Enter Price"
+                  />
+
+                  <label
+                    htmlFor="destination"
+                    className="form-label"
+                  >
+                    Destination
+                  </label>
+                  <input
+                    type="text"
+                    id="destination"
+                    className="form-input"
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    placeholder="destination"
                   />
 
                   <label
@@ -105,25 +154,56 @@ const TourForm = () => {
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Enter your description"
                   />
-                </div>
-              </td>
-              <td>
-                <div className="form-column">
+
                   <label
-                    htmlFor="destination"
+                    htmlFor="duration"
                     className="form-label"
                   >
-                    Destination
+                    Discount
                   </label>
                   <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={Discount}
+                    onChange={(e) => setDiscount(e.target.value)}
+                    placeholder="Discount"
+                  />
+
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    Tour Type
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={TourType}
+                    onChange={(e) => setTourType(e.target.value)}
+                    placeholder="Tour Type"
+                  />
+                </div>
+              </td>
+
+              {/* SECOND */}
+              <td>
+                <div className="form-column">
+                  {/* <label
+                    htmlFor="destination"
+                    className="form-label"
+                  > */}
+                  {/* Destination */}
+                  {/* </label> */}
+                  {/* <input
                     type="text"
                     id="destination"
                     className="form-input"
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
-                    placeholder="Enter your destination"
-                  />
-
+                    placeholder="destination"
+                  /> */}
                   <label
                     htmlFor="duration"
                     className="form-label"
@@ -138,20 +218,105 @@ const TourForm = () => {
                     onChange={(e) => setDuration(e.target.value)}
                     placeholder="Enter your duration"
                   />
-
                   <label
                     htmlFor="duration"
                     className="form-label"
                   >
-                    Duration
+                    Group Size
                   </label>
                   <input
                     type="text"
                     id="duration"
                     className="form-input"
-                    value={Price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Enter Price"
+                    value={GroupSize}
+                    onChange={(e) => setGroupSize(e.target.value)}
+                    placeholder="Enter Group of Size"
+                  />
+                  {/* add */}
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    Departure
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={Departure}
+                    onChange={(e) => setDeparture(e.target.value)}
+                    placeholder="Departure"
+                  />
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    Seats
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={Seats}
+                    onChange={(e) => setSeats(e.target.value)}
+                    placeholder="Number of Seats"
+                  />
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    From Month
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={fromMonth}
+                    onChange={(e) => setFromMonth(e.target.value)}
+                    placeholder=" From Month"
+                  />
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    To Month
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={toMonth}
+                    onChange={(e) => setToMonth(e.target.value)}
+                    placeholder="To Month"
+                  />
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    To Month
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={departureTime}
+                    onChange={(e) => setDepartureTime(e.target.value)}
+                    placeholder=" DepartureTime"
+                  />
+
+                  <label
+                    htmlFor="duration"
+                    className="form-label"
+                  >
+                    ReturnTime
+                  </label>
+                  <input
+                    type="text"
+                    id="duration"
+                    className="form-input"
+                    value={ReturnTime}
+                    onChange={(e) => setReturnTime(e.target.value)}
+                    placeholder="ReturnTime"
                   />
                 </div>
               </td>

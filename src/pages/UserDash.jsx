@@ -76,11 +76,7 @@ export default function () {
       <div className="alldash">
         <ToastContainer />
 
-        <Link to="/DashMenu">
-          <p className=" flex flex-row font-bold gap-3 text-4xl text-custom">
-            Dashboard Menu <BiMenuAltRight />
-          </p>
-        </Link>
+       
         
           <h2 className=" ml-100 font-bold text-4xl text-custom"> Users</h2>
         

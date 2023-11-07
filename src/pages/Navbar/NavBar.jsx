@@ -99,15 +99,17 @@ function NavBar() {
                 <p onClick={close}>Tour</p>
               </Link>
 
-              <Link to={"/addTestimony"}>
+              <Link to={"/SignUp"}>
                 <p onClick={close}>SignUp</p>
               </Link>
               <Link to={"/LoginPage"}>
                 <p onClick={close}>Login</p>
               </Link>
-              <Link to={"/Dash"}>
+
+              {/* <Link to={"/Dash"}>
                 <p onClick={close}>Dashboard</p>
-              </Link>
+              </Link> */}
+
             </p>
           </div>
 

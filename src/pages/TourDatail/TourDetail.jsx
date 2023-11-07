@@ -38,9 +38,24 @@ const TourDetail = () => {
 
   //fetched data
 
-  const [destination, setDestination] = useState("");
-  const [groupSize, setGroupSize] = useState("");
-  const [duration, setDuration] = useState("");
+const [title, setTitle] = useState("");
+const [description, setDescription] = useState("");
+const [destination, setDestination] = useState("");
+const [duration, setDuration] = useState("");
+const [image, setImage] = useState("");
+const [Price, setPrice] = useState("");
+const [GroupSize, setGroupSize] = useState("");
+const [Discount, setDiscount] = useState("");
+const [TourType, setTourType] = useState("");
+const [Departure, setDeparture] = useState("");
+const [Seats, setSeats] = useState("");
+const [fromMonth, setFromMonth] = useState("");
+const [toMonth, setToMonth] = useState("");
+const [DepartureTime, setDepartureTime] = useState("");
+const [ReturnTime, setReturnTime] = useState("");
+const [backgroundImage, setBackgroundImage] = useState("");
+
+        
 
   const fetchTour = () => {
     const token = localStorage.getItem("token");
@@ -62,6 +77,20 @@ const TourDetail = () => {
         setDestination(response?.data?.destination);
         setDuration(response?.data?.Duration);
         setGroupSize(response?.data?.GroupSize);
+        setDescription(response?.data?.Description);
+        setTitle(response?.data?.Title);
+        // setImage(response?.data?.Image);
+        setPrice(response?.data?.Price);
+        setDiscount(response?.data?.Discount);
+        setTourType(response?.data?.TourType);
+        setDeparture(response?.data?.Departure);
+        setSeats(response?.data?.Seats);
+        setFromMonth(response?.data?.fromMonth);
+        setToMonth(response?.data?.toMonth);
+        setDepartureTime(response?.data?.departureTime);
+        setReturnTime(response?.data?.ReturnTime);
+        setBackgroundImage(response?.data?.backdropImage);
+        
       })
       .catch((error) => {
         console.log(error);
@@ -72,7 +101,7 @@ const TourDetail = () => {
     fetchTour();
   }, []);
 
-  // posted data
+  // start Form fetching
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -126,10 +155,11 @@ const TourDetail = () => {
       <ToastContainer />
 
       <div
-        style={{
-          backgroundImage:
-            "url(https://html.geekcodelab.com/holiday-planners/assets/images/tour-banner.jpg)",
-        }}
+        // style={{
+        //   backgroundImage:
+        //     "url(https://html.geekcodelab.com/holiday-planners/assets/images/tour-banner.jpg)",
+        // }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
         className={styles.topContainer}
       >
         <h1 className={styles.topContainettitle}>Tour Detail</h1>
@@ -160,8 +190,7 @@ const TourDetail = () => {
           </div>
           <div className="flex flex-col">
             <p className=" flex flex-row text-6xl text-black italic ml-11 mt-14 mb-10">
-              A wonderful serenity has <br /> taken possession of my entire
-              <br /> soul
+              {title}
             </p>
 
             <div className=" flex gap-10 mt-10 bg-custom h-36 text-2xl">
@@ -169,7 +198,7 @@ const TourDetail = () => {
                 <AiOutlineClockCircle className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
                 <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer">
                   {" "}
-                  2days
+                  {duration}
                 </p>
               </div>
 
@@ -177,15 +206,14 @@ const TourDetail = () => {
                 <GrGroup className=" flex text-5xl ml-9 mt-4 bg-white gap-6 cursor-pointer" />
                 <p className=" flex flex-row text-1xl mt-5 ml-7  cursor-pointer">
                   {" "}
-                  6people
+                  {GroupSize}
                 </p>
               </div>
 
               <div className="peopleplus">
                 <MdOutlineGroupAdd className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
                 <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer">
-                  {" "}
-                  18
+                  {Seats}
                 </p>
               </div>
 
@@ -193,15 +221,14 @@ const TourDetail = () => {
                 <ImLocation className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
                 <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer ">
                   {" "}
-                  Greece
+                  {destination}
                 </p>
               </div>
 
               <div className="discover">
                 <FiSettings className=" flex text-5xl ml-9 mt-3 white gap-6 cursor-pointer" />{" "}
                 <p className=" flex flex-row text-1xl mt-5 ml-7 cursor-pointer ">
-                  {" "}
-                  Location
+                  {destination}
                 </p>
               </div>
             </div>
@@ -241,20 +268,61 @@ const TourDetail = () => {
             <div class=" flex flex-col text-1xl ">
               <div class=" flex flex-row gap-100 shadow-custom leading-50">
                 <div class=" font-bold">Destination</div>
-                <div class=" ">Greece</div>
+                <div class=" ">{destination}</div>
               </div>
               <div class=" flex flex-row gap-100 shadow-custom leading-50">
                 <div class="font-bold">Departure</div>
-                <div class=" ">Lorem Ipsum</div>
+                <div class=" ">{Departure}</div>
               </div>
               <div class=" flex flex-row gap-100 shadow-custom leading-50">
                 <div class="font-bold">Departure Time</div>
-                <div class="cell">9:15 AM To 9:30 AM.</div>
+                <div class="cell">{DepartureTime}</div>
               </div>
               <div class="flex flex-row gap-100 shadow-custom leading-50">
-                <div class="font-bold">Dress Code</div>
-                <div class="cell">comfortable clothing and light jacket.</div>
+                <div class="font-bold">Number of Seats</div>
+                <div class="cell">{Seats}</div>
               </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Duration</div>
+                <div class="cell">{duration}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Group Size(Number of People)</div>
+                <div class="cell">{GroupSize}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Type of Your Tour</div>
+                <div class="cell">{TourType}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Take place From</div>
+                <div class="cell">{fromMonth}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Take place To</div>
+                <div class="cell">{toMonth}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Description</div>
+                <div class="cell">{description}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Departure Time</div>
+                <div class="cell">{DepartureTime}</div>
+              </div>
+
+              <div class="flex flex-row gap-100 shadow-custom leading-50">
+                <div class="font-bold">Return Time</div>
+                <div class="cell">{ReturnTime}</div>
+              </div>
+
               <div class="flex flex-row gap-100 shadow-custom leading-50">
                 <div class="font-bold">Price Included</div>
                 <div class="cell">

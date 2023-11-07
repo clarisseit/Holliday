@@ -35,8 +35,8 @@ export default function AddTestimony() {
         toast.success("signup sucessfully!");
         setTimeout(() => {
 
-           if (esponse.data.user.role == "admin") {
-             navigate("/Dash");
+           if (response.data.user.role == "admin") {
+             navigate("/Dashboard");
            } else {
              navigate("/");
            }
@@ -45,8 +45,8 @@ export default function AddTestimony() {
         }, 5000);
       })
       .catch((error) => {
-        console.log(error);
-        alert("An error happened");
+        // console.log(error);
+        // alert("An error happened");
         toast.error("Failed to signup!");
       });
 

@@ -691,7 +691,7 @@ function App() {
             />
             ;
             <Route
-              path="/AddTestimony"
+              path="/SignUp"
               element={<AddTestimony />}
             />
             <Route
