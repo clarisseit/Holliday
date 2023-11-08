@@ -23,7 +23,7 @@ import axios from "axios";
 export default function () {
   const navigate = useNavigate();
   const [booking, setBooking] = useState([]);
-  const [pageNumber, setNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0);
 
   const bookingPerPage = 10;
   const pagesVisited = pageNumber * bookingPerPage;
@@ -35,7 +35,8 @@ export default function () {
       return (
         <tr className=" flex gap-10 text-center ">
           <td className=" flex flex-row text-center">{item.fullname}</td>
-          {/* <td>{item.email}</td>
+
+          <td>{item.email}</td>
           <td>{item.phone}</td>
           <td>{item.date}</td>
           <td>{item.numberOfTickets}</td>
@@ -56,7 +57,7 @@ export default function () {
                 <AiFillDelete />
               </button>
             </div>
-          </td> */}
+          </td>
         </tr>
       );
     });
@@ -105,7 +106,11 @@ export default function () {
         });
     }
   };
-  // const pageCount = Math.cell()
+  const pageCount = Math.ceil(booking.length / bookingPerPage);
+
+  const changePage = ({selected}) => {
+      setPageNumber(selected)
+  };
   return (
     <div>
       {/* <ArrayTour/> */}
@@ -124,24 +129,32 @@ export default function () {
         </div>
 
         <table className="dashtable">
-          <tbody>
+          <tbody className=" w-full">
             <tr>
-              <td>FullName</td>
-              <td>Email</td>
-              <td>PhoneNumber</td>
-              <td>Date</td>
+              <td className=" underline border-spacing-64 ml-5 ">FullName</td>
+              <td className=" ml-10">Email</td>
+              <td className=" ml6">PhoneNumber</td>
+              <td className=" ml">Date</td>
               <td>NumberOfTickets</td>
 
               <td>Actions</td>
             </tr>
-            {displayBooking}
+            {displayBooking} <ReactPaginate
+            previousLabel = {"Previous"}
+            nextLabel = {"Next"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"paginationButton"}
+            previousLinkClassName={"previousButton"}
+            nextLinkClassName={"nextButton"}
+            disabledClassName={"paginationDisabled"}
+            activeClassName={"paginationActive"}
+            />
             <br />
           </tbody>
         </table>
 
-        <Link to="/">
-          <p className="backhome">Go back to home</p>
-        </Link>
+
       </div>
     </div>
   );

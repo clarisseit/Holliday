@@ -1417,8 +1417,16 @@ td.actions a + a {
   border-radius: 2rem;
   font-size: 1.3rem;
 }
+.tablebooking {
+ 
+  flex: 1;
+ margin-left: -1rem;
+width: fit-content;
+  
+  font-size: 13px;
+} 
 
-.dashtableBooking{
+ .dashtableBooking{
   margin-left: 5rem;
  text-align: center;
   width: 60rem;
@@ -1426,13 +1434,12 @@ td.actions a + a {
   background-color: #f8f5f5;
   border-radius: 2rem;
   font-size: 1.3rem;
-}
-
+} 
 .actions {
   margin-left: -6rem;
   color: yellow;
   font-size: 2rem;
-}
+} 
 
 .reddelete {
   color: #eb3223;
@@ -1771,7 +1778,14 @@ background-color: #bf9e61;
   height: 145%;
   margin-top: -15rem;
 }
-
+.paginationButton{
+  width: 80%;
+  height: 40px;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-left: 34rem;
+}
 
 
 
