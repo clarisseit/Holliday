@@ -25,9 +25,9 @@ import axios from "axios";
 
 export default function () {
   const navigate = useNavigate();
-  const [tours, setTours] = useState([]);
+  const [users, setUsers] = useState([]);
 
-  const fetchTours = () => {
+  const fetchUsers = () => {
     let token = localStorage.getItem("token");
     console.log(token);
 
@@ -39,14 +39,14 @@ export default function () {
         Authorization: `Bearer ${token}`,
       },
     }).then((response) => {
-      setTours(response.data);
+      setUsers(response.data);
 
       console.log(response.data);
     });
   };
 
   useEffect(() => {
-    fetchTours();
+    fetchUsers();
   }, []);
 
   const handleDelete = (id) => {
@@ -91,7 +91,7 @@ export default function () {
               <td>Role</td>
               <td>Actions</td>
             </tr>
-            {tours.map((item) => {
+            {users.map((item) => {
               return (
                 <tr className="titletable">
                   <td>{item.email}</td>

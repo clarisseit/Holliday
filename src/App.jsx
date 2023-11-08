@@ -96,7 +96,10 @@ function App() {
                             {/* <img src="../public/homee1.JPG"></img> */}
 
                             <p className="lifeisshort">Life is short</p>
-                            <p className="theworldiswide"> The World is Wide</p>
+                            <span className="theworldiswide">
+                              {" "}
+                              The World is Wide
+                            </span>
                             <p className="homefirst21000">
                               A journey of a 1000 miles starts with a single
                               step.Import the full <br />
@@ -107,9 +110,7 @@ function App() {
                           </div>
                         </section>
                         <br /> <br /> <br /> <br />
-                        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-                        <br />
-                        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+                        <br /> <br /> <br />
                         {/* <div className="  p-4 flex ">
                           <button className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom">
                             <ImLocation />
@@ -157,7 +158,8 @@ function App() {
                           </select>
                           <button className="box-btn">Find Now</button> */}
                         {/* </div> */}
-                        <form className="home-about">
+                        <br />
+                        <form className="aboutusall">
                           <img
                             className="imghome"
                             src="/home2.JPG"
@@ -207,7 +209,7 @@ function App() {
                             <div className="side11">
                               <div className="card">
                                 <img
-                                  className="italy-pic"
+                                  className="italy-pic3"
                                   src="/plae.jpg"
                                 ></img>
                                 <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
@@ -235,7 +237,7 @@ function App() {
                               <div className="card">
                                 <div className="cardsmall">
                                   <img
-                                    className="italy-pic"
+                                    className="italy-pic2"
                                     src="/mountain.jpg"
                                   ></img>
                                   <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
@@ -243,7 +245,7 @@ function App() {
                                   </p>
                                   <br />
                                   <p className="onp">
-                                    Holiday Planners sit amet consectetur
+                                    Holiday Planners sit amet consectetur <br />
                                     adipisicing elit
                                   </p>
 
@@ -265,7 +267,7 @@ function App() {
                               <div className="crad3small">
                                 <div className="card">
                                   <img
-                                    className="italy-pic"
+                                    className="italy-pic1"
                                     src="/image.jpg"
                                   ></img>
 
@@ -399,7 +401,7 @@ function App() {
                                   Sign Up Page
                                 </Link>{" "}
                                 <br />
-                                <Link to="/Dash">Dashboard</Link> <br />
+                               
                               </ul>
                             </div>
 
@@ -500,7 +502,7 @@ function App() {
                                 <input
                                   type="text"
                                   id="name1"
-                                  class="font-bold border p-8 text-center bg-white"
+                                  class="font-bold  border p-8 text-center bg-white"
                                   placeholder="Full Name"
                                 />
                               </div>
@@ -522,13 +524,14 @@ function App() {
                                   onChange={(e) => setMessage(e.target.value)}
                                 />
                               </div>
-
-                              <button
-                                onClick={(e) => handleForm(e)}
-                                className=" flex bg-custom p-5 hover:bg-white ml-3 mb-7 mt-16 text-3xl space-x-2"
-                              >
-                                Send Message
-                              </button>
+                              <Link to="/">
+                                <button
+                                  onClick={(e) => handleForm(e)}
+                                  className=" flex bg-custom p-5 hover:bg-white ml-3 mb-7 mt-16 text-3xl space-x-2"
+                                >
+                                  Send Message
+                                </button>
+                              </Link>
                             </div>
                           </form>
                         </div>
@@ -650,7 +653,7 @@ function App() {
                                   Sign Up Page
                                 </Link>{" "}
                                 <br />
-                                <Link to="/Dash">Dashboard</Link> <br />
+                               
                               </ul>
                             </div>
                           </div>
@@ -723,7 +726,7 @@ function App() {
               element={<EditBooking />}
             />
             <Route
-              path="/EditUser"
+              path="/editUser"
               element={<EditUser />}
             />
             <Route

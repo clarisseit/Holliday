@@ -359,7 +359,7 @@ const TourList = () => {
               <Link to="/TourDetails">TourDetails Page</Link> <br />
               <Link to="/LoginPage">Login Page</Link> <br />
               <Link to="/AddTestimony">Sign Up Page</Link> <br />
-              <Link to="/Dash">Dashboard</Link> <br />
+             
             </ul>
           </div>
 

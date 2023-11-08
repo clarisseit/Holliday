@@ -1,7 +1,7 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 80rem;
+  
     margin-right: 3rem;
 
 }
@@ -12,8 +12,8 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 100px;
-   width: 60rem;
+    gap: 20px;
+   
    
     margin-left: 2rem;
     
@@ -38,7 +38,6 @@
   display: flex;
   flex: 1;
 
-  width: 3px;
 }
 
 .outletdash {
@@ -46,7 +45,13 @@
   margin-top: -60rem;
 }
  
+.containbarchartdash{
+  flex: 1;
+  display: flex;
+  height: 40px;
+  margin-left: 2rem;
 
+}
 
 
 

@@ -7,9 +7,10 @@
     gap: 10px;
     
     border: 1px solid gray;
-    /* padding: 20px; */
+    padding: 10px 2px;
     border-radius: 10px;
     box-shadow: inset 1px gray;
+
 }
 
 .left {
@@ -17,7 +18,7 @@
     flex: 1;
     object-fit: contain;
     overflow: hidden;
-
+    /* width: 3rem; */
 
 }
 
@@ -39,6 +40,7 @@
 .text {
     font-size: 30px;
     font-weight: bold;
+    /* width: 4rem; */
 }
 
 .cardimg{
@@ -47,10 +49,17 @@
     object-fit: cover;
     overflow: hidden;
     background-color: aquamarine;
+    
+    
 }
 
+.left {
+ 
+}
+.right {
 
 
+}
 
 
 

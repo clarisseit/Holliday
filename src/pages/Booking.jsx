@@ -15,19 +15,53 @@ import { AiFillDelete } from "react-icons/ai";
 import { BiMenuAltRight } from "react-icons/bi";
 import { GrAddCircle } from "react-icons/gr";
 import { ToastContainer, toast } from "react-toastify";
+import ReactPaginate from "react-paginate";
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-//  here i'm going to setdelete //  here i'm going to setdelete//  here i'm going to setdelete//  here i'm going to setdelete
-
-//  here i'm going to setdelete//  here i'm going to setdelete//  here i'm going to setdelete//  here i'm going to setdelete//  here i'm going to setdelete
-
 export default function () {
   const navigate = useNavigate();
-  const [tours, setTours] = useState([]);
+  const [booking, setBooking] = useState([]);
+  const [pageNumber, setNumber] = useState(0);
 
-  const fetchTours = () => {
+  const bookingPerPage = 10;
+  const pagesVisited = pageNumber * bookingPerPage;
+
+  const displayBooking = booking
+    .slice(pagesVisited, pagesVisited + bookingPerPage)
+    .map((item) => {
+      console.log(item, "item");
+      return (
+        <tr className=" flex gap-10 text-center ">
+          <td className=" flex flex-row text-center">{item.fullname}</td>
+          {/* <td>{item.email}</td>
+          <td>{item.phone}</td>
+          <td>{item.date}</td>
+          <td>{item.numberOfTickets}</td>
+          <td>
+            <div className="actions">
+              <button
+                onClick={() => {
+                  navigate(`/EditBooking/${item._id}`);
+                }}
+                className="editdash"
+              >
+                <AiFillEdit />
+              </button>
+              <button
+                onClick={() => handleDelete(item._id)}
+                className="reddelete"
+              >
+                <AiFillDelete />
+              </button>
+            </div>
+          </td> */}
+        </tr>
+      );
+    });
+
+  const fetchBooking = () => {
     let token = localStorage.getItem("token");
     console.log(token);
 
@@ -39,14 +73,14 @@ export default function () {
         Authorization: `Bearer ${token}`,
       },
     }).then((response) => {
-      setTours(response.data);
+      setBooking(response.data);
 
       console.log(response.data);
     });
   };
 
   useEffect(() => {
-    fetchTours();
+    fetchBooking();
   }, []);
 
   const handleDelete = (id) => {
@@ -71,13 +105,12 @@ export default function () {
         });
     }
   };
-
+  // const pageCount = Math.cell()
   return (
     <div>
       {/* <ArrayTour/> */}
       <div className="alldash">
         <ToastContainer />
-      
 
         <h1 className=" mr-80font-bold text-4xl text-custom">Booking</h1>
 
@@ -101,37 +134,7 @@ export default function () {
 
               <td>Actions</td>
             </tr>
-            {tours.map((item) => {
-              return (
-                <tr className=" flex gap-10 text-center ">
-                  <td className=" flex flex-row text-center">
-                    {item.fullname}
-                  </td>
-                  <td>{item.email}</td>
-                  <td>{item.phone}</td>
-                  <td>{item.date}</td>
-                  <td>{item.numberOfTickets}</td>
-                  <td>
-                    <div className="actions">
-                      <button
-                        onClick={() => {
-                          navigate(`/EditBooking/${item._id}`);
-                        }}
-                        className="editdash"
-                      >
-                        <AiFillEdit />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(item._id)}
-                        className="reddelete"
-                      >
-                        <AiFillDelete />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              );
-            })}
+            {displayBooking}
             <br />
           </tbody>
         </table>

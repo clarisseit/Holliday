@@ -8,7 +8,7 @@ export const StartsCard = (props) => {
             <img
               className={styles.cardimg}
               src="https://carasaven.com/wp-content/uploads/2022/02/Cara-Saven-Zebra-Crossing-BW-Wallpaper.jpg"
-              width={200}
+              width={100}
             />
           </div>
           <div className={styles.right}>

@@ -275,6 +275,7 @@ form {
   display: flex;
   text-align: center;
   font-size: 25px;
+
 }
 
 .delete {
@@ -338,6 +339,12 @@ form {
   font-size: 3rem;
   color: #c29d59;
 }
+
+.aboutusall{
+  margin-left: 2rem;
+}
+
+
 .plan {
   font-size: 3rem;
 }
@@ -434,10 +441,31 @@ form {
   flex-direction: column;
 }
 
-.italy-pic {
+.italy-pic3 {
   background-size: cover;
   width: fit-content;
   height: 24rem;
+  width: 25rem;
+  margin-top: 2rem;
+}
+
+.italy-pic2 {
+  background-size: cover;
+  width: fit-content;
+  height: 24rem;
+  width: 25rem;
+ margin-left: -6rem;
+ margin-top: 2rem;
+}
+
+
+.italy-pic1 {
+  background-size: cover;
+  width: fit-content;
+  height: 24rem;
+  width: 25rem;
+  margin-left: -16rem;
+  margin-top: -4rem;
 }
 
 .lineff {
@@ -1638,31 +1666,31 @@ transition-duration: 3sec;
   margin-left: 4rem;
 }
 
-.barchartdash {
-    background-color: #007bff;
-    width: 1000px;
-    margin-left: 10rem;
-    margin-top: 5rem;
-    
-}
+
+
+
 
 .lifeisshort {
     font-size: 4rem;
     margin-top: -30rem;
-    margin-left: 43rem;
+    margin-left: 45rem;
     color: white;
+    
 
 }
 
 .theworldiswide {
     font-size: 4rem;
-    color: #b39154;
-    margin-left: 35rem;
+    color: #f6f6f5;
+    margin-left: 37rem;
+    background-color: #b39154;
   
 }
 .homefirst21000 {
 font-size: 2rem;
-margin-left: 30rem;
+margin-left: 3rem;
+text-align: center;
+color: #b8c0c8;
 }
 
 .contactcss {
@@ -1673,8 +1701,8 @@ margin-left: 30rem;
 
 .getaquestion {
 font-size: 2rem;
-margin-left: 35rem;
-margin-top: -21rem;
+margin-left: 30rem;
+margin-top: -26rem;
 background-color: #bf9e61;
 }
 

@@ -14,6 +14,8 @@ import { BiMenuAltRight } from "react-icons/bi";
 import ArrayTour from "../../components/ArrayTour";
 import { Link, useNavigate } from "react-router-dom";
 import { StartsCard } from "../../components/StartsCard";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -48,6 +50,113 @@ ChartJS.register(
 
 
 export default function Dashboard() {
+  // Dynamic chart
+
+  const [chart, setChart] = useState([]);
+  const fetchChart = () => {
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/count?year=2023",
+      headers: {
+        "Content-Type": "application.json",
+      },
+    })
+      .then((response) => {
+        setChart(response.data);
+        console.log(response);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    fetchChart();
+  }, []);
+
+  //Dynamic on booking
+
+  const [booking, setBooking] = useState([]);
+
+  const fetchBooking = () => {
+    let token = localStorage.getItem("token");
+    console.log(token);
+
+    axios({
+      method: "GET",
+
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/view",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setBooking(response.data);
+
+      console.log(response.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchBooking();
+  }, []);
+
+  //Dynamic on booking End
+
+  // Dynamic on tour start
+
+  const [tours, setTours] = useState([]);
+
+  const fetchTours = () => {
+    let token = localStorage.getItem("token");
+    console.log(token);
+
+    axios({
+      method: "GET",
+
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setTours(response.data);
+
+      console.log(response.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchTours();
+  }, []);
+
+  // Dynamic on tour end
+
+  //End user Dynamic start
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = () => {
+    let token = localStorage.getItem("token");
+    console.log(token);
+
+    axios({
+      method: "GET",
+
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setUsers(response.data);
+
+      console.log(response.data);
+    });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  //End user Dynamic
+
   const options = {
     responsive: true,
     plugins: {
@@ -61,25 +170,13 @@ export default function Dashboard() {
     },
   };
 
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "Augst",
-    "October",
-    "Noveber",
-    "December",
-  ];
+  const labels = chart?.map((cart) => cart.label);
   const data = {
     labels,
     datasets: [
       {
         label: "Number of Bookings",
-        data: [38, 34, 87, 45, 34, 21, 32, 13, 64, 24, 35],
+        data: chart?.map((cart) => cart.count),
         backgroundColor: "#c29d59",
       },
       {
@@ -111,35 +208,38 @@ export default function Dashboard() {
         <h2 className=" flex text-center font-bold ml-100 text-4xl hover:text-orange-300">
           Hello Clarisse!!!!!!
         </h2>
-        
-        {/* <Link to="/Dashboard">
+
+        <Link to="/Dashboard">
           <p className="">Go back to home</p>
-        </Link> */}
+        </Link>
 
         <h2> </h2>
         <div className={styles.container}>
           <div className={styles.topcontainer}>
             <StartsCard
               title="Tours"
-              text="200"
+              text={tours.length}
             />
             <StartsCard
               title="Bookings"
-              text="500"
+              text={booking.length}
             />
             <StartsCard
               title="Users"
-              text="300"
+              text={users.length}
             />
           </div>
-          <div className=" flex flex-row gap-x-16 w-1/2 h-96">
-            <div className=" barchartdash">
+          <div className={styles.containbarchartdash}>
+            <div className={styles.barchartdash}>
               <Bar
+                width={400}
+                height={400}
                 data={data}
                 options={options}
-              />
+              />{" "}
+              <br /> <br />
             </div>
-            <div className=" flex w-96 h-full ">
+            <div className="">
               <Radar
                 width={400}
                 height={700}
@@ -149,9 +249,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-        <Link to="/">
-          <p className="backhome">Go back to home</p>
-        </Link>
       </div>
     </div>
   );
