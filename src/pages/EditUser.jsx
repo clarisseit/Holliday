@@ -5,8 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { FidgetSpinner } from "react-loader-spinner";
 
 const EditUser = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
   let id = params.id;
@@ -42,7 +44,7 @@ const EditUser = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-
+     setIsLoading(true);
     let token = localStorage.getItem("token");
 
     console.log("token", token);
@@ -116,9 +118,23 @@ const EditUser = () => {
           placeholder="Update User Title"
         />
         <button
-          className="addTourbutton"
+          className="form-button"
           onClick={handleForm}
         >
+          {isLoading ? (
+            <FidgetSpinner
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="dna-loading"
+              wrapperStyle={{}}
+              wrapperClass="dna-wrapper"
+              ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+              backgroundColor="#F4442E"
+            />
+          ) : (
+            "login"
+          )}
           Update User
         </button>
       </form>

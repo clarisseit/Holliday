@@ -25,6 +25,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import styles from "./tourdatail.module.css";
+ import { Dna } from "react-loader-spinner";
 
 const TourDetail = () => {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ const [toMonth, setToMonth] = useState("");
 const [DepartureTime, setDepartureTime] = useState("");
 const [ReturnTime, setReturnTime] = useState("");
 const [backgroundImage, setBackgroundImage] = useState("");
+const [isLoading, setIsLoading] = useState(false);
 
         
 
@@ -122,6 +124,8 @@ const [backgroundImage, setBackgroundImage] = useState("");
   const handleForm = (e) => {
     console.log("Helllooooo");
     e.preventDefault();
+setIsLoading(true);
+
     const token = localStorage.getItem("token");
     console.log(token, "token");
 
@@ -428,11 +432,27 @@ const [backgroundImage, setBackgroundImage] = useState("");
                     <p>Check availability</p>
                   </div>
 
-                  <button
+                  {/* <button
                     onClick={(e) => handleForm(e)}
                     className=" flex bg-custom p-10 hover:bg-white ml-32 mb-7 mt-16 text-3xl space-x-2"
                   >
                     Book now
+                  </button> */}
+
+                  <button
+                    onClick={(e) => handleForm(e)}
+                    className=" flex bg-custom p-10 hover:bg-white ml-32 mb-7 mt-16 text-3xl space-x-2"
+                  >
+                    {isLoading ? (
+                      <Dna
+                        visible={true}
+                        height={80}
+                        width={80}
+                        ariaLabel="dna-loading"
+                      />
+                    ) : (
+                      "Book Now"
+                    )}
                   </button>
                 </div>
               </form>
@@ -555,7 +575,6 @@ const [backgroundImage, setBackgroundImage] = useState("");
               <Link to="/TourDetails">TourDetails Page</Link> <br />
               <Link to="/LoginPage">Login Page</Link> <br />
               <Link to="/AddTestimony">Sign Up Page</Link> <br />
-             
             </ul>
           </div>
 

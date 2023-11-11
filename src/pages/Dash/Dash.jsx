@@ -15,6 +15,7 @@ import ArrayTour from "../../components/ArrayTour";
 import { Link, useNavigate } from "react-router-dom";
 import { StartsCard } from "../../components/StartsCard";
 import axios from "axios";
+import { ThreeCircles } from "react-loader-spinner";
 import { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
@@ -53,7 +54,9 @@ export default function Dashboard() {
   // Dynamic chart
 
   const [chart, setChart] = useState([]);
+   const [isLoading, setIsLoading] = useState(false);
   const fetchChart = () => {
+     setIsLoading(true);
     axios({
       method: "GET",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/count?year=2023",
@@ -64,6 +67,7 @@ export default function Dashboard() {
       .then((response) => {
         setChart(response.data);
         console.log(response);
+        setIsLoading(false);
       })
 
       .catch((error) => {
@@ -77,11 +81,11 @@ export default function Dashboard() {
   //Dynamic on booking
 
   const [booking, setBooking] = useState([]);
-
+ 
   const fetchBooking = () => {
     let token = localStorage.getItem("token");
     console.log(token);
-
+   
     axios({
       method: "GET",
 
@@ -93,6 +97,7 @@ export default function Dashboard() {
       setBooking(response.data);
 
       console.log(response.data);
+      setIsLoading(false);
     });
   };
 
@@ -201,55 +206,71 @@ export default function Dashboard() {
   };
   return (
     <div>
-      {/* <ArrayTour/> */}
-      <div>
-        <div className="dash1"></div>
-        <h1 className="thisisdashboard"></h1>
-        <h2 className=" flex text-center font-bold ml-100 text-4xl hover:text-orange-300">
-          Hello Clarisse!!!!!!
-        </h2>
+      {isLoading ? (
+        <ThreeCircles
+          height="600"
+          width="500"
+          margin-right="auto"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=" bg-custom mr-24"
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      ) : (
+        <div>
+          <div className="dash1"></div>
 
-        <Link to="/Dashboard">
-          <p className="">Go back to home</p>
-        </Link>
+          <h1 className="thisisdashboard"></h1>
+          <h2 className=" flex text-center font-bold ml-100 text-4xl hover:text-orange-300">
+            Hello Clarisse!!!!!!
+          </h2>
 
-        <h2> </h2>
-        <div className={styles.container}>
-          <div className={styles.topcontainer}>
-            <StartsCard
-              title="Tours"
-              text={tours.length}
-            />
-            <StartsCard
-              title="Bookings"
-              text={booking.length}
-            />
-            <StartsCard
-              title="Users"
-              text={users.length}
-            />
-          </div>
-          <div className={styles.containbarchartdash}>
-            <div className={styles.barchartdash}>
-              <Bar
-                width={400}
-                height={400}
-                data={data}
-                options={options}
-              />{" "}
-              <br /> <br />
-            </div>
-            <div className="">
-              <Radar
-                width={400}
-                height={700}
-                data={Radardata}
-                options={options}
+          <Link to="/Dashboard">
+            <p className="">Go back to home</p>
+          </Link>
+
+          <h2> </h2>
+          <div className={styles.container}>
+            <div className={styles.topcontainer}>
+              <StartsCard
+                title="Tours"
+                text={tours.length}
               />
+              <StartsCard
+                title="Bookings"
+                text={booking.length}
+              />
+              <StartsCard
+                title="Users"
+                text={users.length}
+              />
+            </div>
+            <div className={styles.containbarchartdash}>
+              <div className={styles.barchartdash}>
+                <Bar
+                  width={400}
+                  height={400}
+                  data={data}
+                  options={options}
+                />{" "}
+                <br /> <br />
+              </div>
+              <div className="">
+                <Radar
+                  width={400}
+                  height={700}
+                  data={Radardata}
+                  options={options}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

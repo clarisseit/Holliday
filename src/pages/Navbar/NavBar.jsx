@@ -66,59 +66,47 @@ function NavBar() {
 
       <div className={styles.navbarBottom}>
         <a href="/">
-          <img
-            height={70}
-            src="../public/hollidayplanner.JPG"
-          />
+          <img height={70} src="../public/hollidayplanner.JPG" />
         </a>
         <div className={styles.rightButtonsContainer}>
           <Button title={"RESERVE"} />
-          <i className=" bg-E9C06 pa">
+          <i className={styles.rightSearch}>
             <IoSearchCircleOutline />
           </i>
-          <button
-            className=" flex text-6xl "
-            onClick={open}
-          >
+          <button className=" flex text-7xl " onClick={open}>
             <BiMenuAltRight />
           </button>
         </div>
       </div>
 
       {openModal && (
-        <div className="openmodal ">
-          <div className="navhome">
-            <p className="home">
-              <Link to={"/"}>
-                <p onClick={close}>Home</p>
-              </Link>
-              <Link to={"/contact"}>
-                <p onClick={close}>Contact </p>
-              </Link>
-              <Link to={"/tourList"}>
-                <p onClick={close}>Tour</p>
-              </Link>
+        <div className={styles.openmodal}>
+          <div className={styles.link}>
+            <Link to={"/"}>
+              <p onClick={close}>Home</p>
+            </Link>
+            <Link to={"/contact"}>
+              <p onClick={close}>Contact </p>
+            </Link>
+            <Link to={"/tourList"}>
+              <p onClick={close}>Tour</p>
+            </Link>
 
-              <Link to={"/SignUp"}>
-                <p onClick={close}>SignUp</p>
-              </Link>
-              <Link to={"/LoginPage"}>
-                <p onClick={close}>Login</p>
-              </Link>
+            <Link to={"/SignUp"}>
+              <p onClick={close}>SignUp</p>
+            </Link>
+            <Link to={"/LoginPage"}>
+              <p onClick={close}>Login</p>
+            </Link>
 
-              {/* <Link to={"/Dash"}>
-                <p onClick={close}>Dashboard</p>
-              </Link> */}
-
-            </p>
+            <button
+              className={styles.closeModal}
+            
+              onClick={close}
+            >
+              <AiOutlineCloseCircle />
+            </button>
           </div>
-
-          <button
-            className="closebtnmodal"
-            onClick={close}
-          >
-            <AiOutlineCloseCircle />
-          </button>
         </div>
       )}
     </div>

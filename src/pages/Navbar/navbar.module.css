@@ -87,6 +87,7 @@
 }
 
 .navhome {
+ 
 }
 
 .navbarBottom {
@@ -102,20 +103,82 @@
   gap: 15px;
 }
 
+.openmodal{
+  background-color: #c29d59;
+  padding: 220px;
+  margin-top: -169px;
+  font-size: 40px;
+}
+.openmodal:hover{
+  background-color: #807868;
+}
+
+.closeModal{
+margin-top: -8rem;
+ margin-left: 40rem;
+ font-size: 4rem;
+}
+
+.rightSearch{
+  background-color: #c29d59;
+  padding: 5px;
+  font-size: 60px;
+  color: #f2f2f2;
+}
+.rightSearch:hover{
+  background-color: black;
+
+}
 
 
 
-/* Responsive adjustments for small devices */
-@media (max-width: 700px) {
-  /* Hide the specified section on screens with a maximum width of 400px */
+
+/* Media queries for smaller screens */
+@media (max-width: 767px) {
   .navbarTop {
-    display: none;
-    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+   background-color: #c29d59;
+   width: 19rem;
+   margin-left: -4rem;
+   overflow-x: hidden;
+   
+
   }
-.navbarTop .right {
-display: none;
+
+  .navbarBottom {
+   background-color: rgb(246, 245, 247);
+margin-left: -8rem;
+justify-content: center;
+margin-top: 1em;
+text-align: center;
+
+  }
+
+  .modal {
+    background-color: rgb(33, 199, 199);
+    margin-left: 44rem;
+  }
+
+  .navLinks {
+   background-color: blue;
+
+  }
+
+  .closeBtn {
+   background-color: chartreuse;
+   display: none;
 }
 
-
+.openmodal {
+  background-color: rgb(9, 9, 9);
+  margin-left: -10rem;
+  color: #fff;
 }
 
+.closeModal{
+
+margin-left: 5rem;
+margin-top: -2rem;
+}
+}

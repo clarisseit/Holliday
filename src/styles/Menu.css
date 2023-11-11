@@ -49,26 +49,26 @@
   margin-top: 3rem;
   width: 12rem;
   height: 3rem;
-  color: rgb(242, 234, 233);
+  color: rgb(255, 255, 255);
   background-color: #c29d59;
 }
 /* Styles for the menu links */
 .menulink {
   margin: 10px 0;
-  color: white;
+  color: rgb(250, 249, 249);
   text-decoration: none;
-  display: block;
+ 
 }
 
 .menulink:hover {
-  text-decoration: underline;
+  
 }
 
 /* Styles for the close button */
 .closebtnmodal {
   background: none;
   border: none;
-  color: white;
+  color: rgb(240, 233, 233);
   font-size: 24px;
   cursor: pointer;
 }
@@ -277,27 +277,28 @@ margin-left: 47rem;
   width: 100%;
 }
 
-.form-table {
+/* .form-table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px;
-}
-
-tr {
+} */
+/* ======================= */
+/* tr {
   display: flex;
-}
-
+} */
+/* ===================== */
 td {
   flex: 1;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .form-column {
   display: flex;
   flex-direction: column;
+  font-size: 13px;
 }
 
 .form-label {
@@ -422,106 +423,13 @@ td {
 /* tourfetch */ /* tourfetch */ /* tourfetch *//* tourfetch */ /* tourfetch */ 
 
 
-@media only screen and (max-width: 700px) {
-  .navbar-container {
-    background-color: rgb(247, 241, 241);
-    padding: 0;
-  }
 
-  .navbar-bottom {
-    padding: 90 10px;
-    background-color: rgb(239, 239, 225);
-    width: 23rem;
-    margin-left: 1rem;
-    font-size: 4rem;
-
-  }
-.navbar-bottom:hover{
-  background-color: #9af2a8;
-  cursor: pointer;
-}
-  .bold {
-    font-size: 1.2rem;
-  }
-
-  .reserve {
-    font-size: 10px;
-  }
-
-  .navsearch {
-    font-size: 20px;
-  }
-
-  .navmenu {
-    font-size: 30px;
-  }
-   .navmenu:hover {
-    background-color: #000;
-  }
-
-  .modalicon button {
-    font-size: 20px;
-  }
-}
-
- 
-@media only screen and (max-width: 700px) {
-  .navbar-container {
-    background-color: black;
-    padding: 0;
-  }
-
-  .navbar-bottom {
-    /* padding: 0 10px;
-    flex-direction: column;
-    background-color: #e4d039;
-    gap: 4rem; */
-
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 
-    repeat(auto-fit, minmax(25rem, 1fr));
-  }
-
-  .bold {
-    font-size: 1.2rem;
-  }
-
-  .reserve {
-    font-size: 10px;
-  }
-
-  .navsearch {
-    font-size: 20px;
-  }
-
-  .navmenu {
-    font-size: 20px;
-  }
-
-  .modalicon button {
-    font-size: 20px;
-  }
-  .home-form{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem
-  }
-  .home-about {
-    display: flex;
-    flex-direction: column;
-    font-size: 2rem;
-  
-
-
-    
-  }
 
 
 
 
   
-}
+
 
 
 
@@ -538,33 +446,19 @@ td {
 }
 
 
-@media (max-width: 700px) {
-  .testmony1 {
+@media (max-width: 767px) {
+  .menuLinks {
     display: flex;
-    flex-direction: column;
-  }
-  .massege {
-    flex-direction: column;
-    align-items: center;
+flex-direction: row;
+margin-left: auto;
+background: #8fb896;
   }
 
-  .img-contact {
-    width: 100%;
-    height: auto;
-  }
-
-  .contact-Massege,
-  .contactform,
-  .formt1cont {
-    margin: 20px;
-    text-align: center;
-  }
-
-  .footercontact {
-    text-align: center;
+  .menuLinks a {
+    margin-bottom: 0!important;
+    margin-right: 10px;
   }
 }
-
 
 
 
@@ -586,4 +480,11 @@ td {
       flex-direction: column;
       background-color: #8fb896;
     }
+
+  .closebtnmodal {
+ display: none;
+ margin-left: 400px;
+
+}
+
   }

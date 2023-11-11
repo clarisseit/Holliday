@@ -4,10 +4,12 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { FidgetSpinner } from "react-loader-spinner";
 
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 const TourForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [destination, setDestination] =useState("");
@@ -48,7 +50,7 @@ const TourForm = () => {
   const handleForm = (e) => {
     //console.log("Hello");
     e.preventDefault();
-  
+   setIsLoading(true);
 
     axios({
       method: "POST",
@@ -61,6 +63,7 @@ const TourForm = () => {
       .then((response) => {
         console.log(response);
         toast.success(response.data.message);
+         setIsLoading(false);
         setTimeout(() => {
           navigate("/tourDash");
         }, 3000);
@@ -83,7 +86,7 @@ const TourForm = () => {
                 <div className="form-column">
                   <label
                     htmlFor="image"
-                    className="form-label"
+                    className=""
                   >
                     Image
                   </label>
@@ -326,7 +329,20 @@ const TourForm = () => {
             className="form-button"
             onClick={handleForm}
           >
-            Add Tour
+            {isLoading ? (
+              <FidgetSpinner
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+                ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+                backgroundColor="#F4442E"
+              />
+            ) : (
+              "Add Tour"
+            )}
           </button>
         </form>
       </div>

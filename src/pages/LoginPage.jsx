@@ -3,17 +3,19 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import {Dna} from "react-loader-spinner";
 
 export default function login() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("yoo", Email, Password);
-
+    setIsLoading(true);
     axios({
       method: "POST",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/login",
@@ -34,7 +36,6 @@ export default function login() {
         const token = localStorage.getItem("token");
         console.log(token);
 
-        
         console.log(response);
         toast.success("Login successfull");
         localStorage.setItem("token", response.data.access_token);
@@ -85,13 +86,23 @@ export default function login() {
           />{" "}
           <br /> <br />
           <br />
-          <input
+          <button className=" bg-custom border-dashed text-2xl"
             onClick={handleSubmit}
             type="submit"
             value="Login"
             onChange={(e) => setPassword(e.target.value)}
-          />{" "}
-          <br /> <br /> <br />
+          >
+            {isLoading ? (
+              <Dna
+                visible={true}
+                height={80}
+                width={80}
+                ariaLabel="dna-loading"
+              />
+            ) : (
+              "login"
+            )}
+          </button>
           <p>___________or login with_________</p>
           <div className="mb-6">
             <button className="bg-custom text-white p-2 rounded cursor-pointer hover:bg-red-700">

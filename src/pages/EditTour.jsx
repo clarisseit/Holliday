@@ -5,7 +5,9 @@ import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { Vortex } from "react-loader-spinner";
 const EditTour = () => {
+   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
   let tourId = params.id;
@@ -21,6 +23,7 @@ const EditTour = () => {
   const fetchTour = () => {
     console.log("haha");
     let token = localStorage.getItem("token");
+    setIsLoading(true);
     axios({
       method: "GET",
       url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/getElement?fieldName=_id&value=${tourId}`,
@@ -32,6 +35,7 @@ const EditTour = () => {
         setTitle(response?.data?.title);
         setDestination(response?.data?.destination);
         setDuration(response?.data?.duration);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -283,11 +287,25 @@ const EditTour = () => {
               </td>
             </tr>
           </table>
+        
+
           <button
             className="form-button"
             onClick={handleForm}
           >
-            Update Tour
+            {isLoading ? (
+              <Vortex
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="vortex-loading"
+                wrapperStyle={{}}
+                wrapperClass="vortex-wrapper"
+                colors={["red", "green", "blue", "yellow", "orange", "purple"]}
+              />
+            ) : (
+              "Update Tour"
+            )}
           </button>
         </form>
       </div>

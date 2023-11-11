@@ -7,19 +7,20 @@ import { tours } from "./utils/data";
 import { createContext, useState } from "react";
 import SignUp from "./pages/SignUp";
 import Dash from "./pages/Dash/Dash";
-import DashTour from "./pages/DashTour";
+import DashTour from "./pages/TourDash/DashTour";
 import { ImLocation } from "react-icons/im";
 import { FaGreaterThan } from "react-icons/fa";
 import FormDash from "./pages/FormDash";
-import Booking from "./pages/Booking";
+import Booking from "./pages/Booking/Booking";
 import Dashboard from "./pages/Dashlayout/Dashboard";
-import EditBooking from "./pages/EditBooking";
+import EditBooking from "./pages/Booking/EditBooking";
+
 
 import EditTour from "./pages/EditTour";
 import EditUser from "./pages/EditUser";
 import Menu from "./pages/menu";
 import DashMenu from "./pages/DashMenu";
-import UserDash from "./pages/UserDash";
+import UserDash from "./pages/UserDash/UserDash";
 
 import "./App.css";
 import TourList from "./pages/Tour/TourList";
@@ -73,10 +74,7 @@ function App() {
         ></AppContext.Provider>
         <BrowserRouter>
           <Routes>
-            <Route
-              path="/"
-              element={<Layout />}
-            >
+            <Route path="/" element={<Layout />}>
               {
                 <Route
                   index
@@ -86,89 +84,45 @@ function App() {
                         {/* <img src="../public/home.JPG"></img> */}
                         <section>
                           <>
-                            <img
-                              src="/dubai.jpg"
-                              alt=""
-                              className="img-home"
-                            />
+                            <img src="/dubai.jpg" alt="" className="img-home" />
                           </>
-                          <div className="bcgrdimg">
-                            {/* <img src="../public/homee1.JPG"></img> */}
-
+                          <h1 className="centerHome">
                             <p className="lifeisshort">Life is short</p>
-                            <span className="theworldiswide">
-                              {" "}
-                              The World is Wide
-                            </span>
+                            <p className="theworldiswide"> The World is Wide</p>
                             <p className="homefirst21000">
                               A journey of a 1000 miles starts with a single
-                              step.Import the full <br />
-                              demo content with 1 click and create a
-                              head-turning website for <br /> your travel
+                              step.Import the full demo content with 1 click and
+                              create a head-turning website for your travel
                               agency.
                             </p>
-                          </div>
+                          </h1>
                         </section>
                         <br /> <br /> <br /> <br />
                         <br /> <br /> <br />
-                        {/* <div className="  p-4 flex ">
-                          <button className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom">
-                            <ImLocation />
-                            Location
-                          </button>
-                          <button className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom">
-                            <MdOutlineCalendarMonth />
-                            Gallery
-                          </button>
-                          <button className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom">
-                            <FaFlag />
-                            Review
-                          </button>
-                        </div> */}
-                        {/* <div className=""> */}
-                        {/* <input
-                            className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom"
-                            type="text"
-                            id="destination"
-                            name="destination"
-                            placeholder="Where To "
-                            required
-                          />
-
-                          <input
-                            className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom"
-                            type="date"
-                            id="travelDate"
-                            placeholder=" Choose Date"
-                            name="travelDate"
-                            min="2023-10-01"
-                            max="2023-10-31"
-                          />
-
-                          <select
-                            className="flex flex-col ml-96 gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom"
-                            id="travelType"
-                            name="travelType"
-                            placeholder="Travel Type"
-                          >
-                            <option value="vacation">Vacation</option>
-                            <option value="business">Business</option>
-                            <option value="adventure">Adventure</option>
-                            <option value="family">Family</option>
-                          </select>
-                          <button className="box-btn">Find Now</button> */}
-                        {/* </div> */}
+                        <div className="display-none">
+                          <div className="  p-4 flex mt-3 ">
+                            <p className="flex flex-row gap-2  p-2 text-1xl  border-black border-2  hover:bg-custom">
+                              <ImLocation />
+                              Location
+                            </p>
+                            <p className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom">
+                              <MdOutlineCalendarMonth />
+                              Gallery
+                            </p>
+                            <p className="flex flex-row gap-3 justify-center p-6 text-3xl  border-black border-2  hover:bg-custom">
+                              <FaFlag />
+                              Review
+                            </p>
+                          </div>
+                        </div>
                         <br />
                         <form className="aboutusall">
-                          <img
-                            className="imghome"
-                            src="/home2.JPG"
-                          ></img>
+                          <img className="imghome" src="/home2.JPG"></img>
                           <div className="sidee">
-                            <h5 className="about"> | About us</h5>
+                            <h5 className="about"> | About Us</h5>
                             <h3 className="plan">
-                              <small>Plan Your</small> <b>Trip</b>{" "}
-                              <small>with</small> <b>Us</b>
+                              <small>Plan Your</small> <b>Trip</b>
+                              <small> with</small> <b>Us</b>
                             </h3>
                             <br />
                             <p className=" flex flex-col">
@@ -187,7 +141,7 @@ function App() {
                             </p>
 
                             <button
-                              className="click11"
+                              className="readmore"
                               onClick={() => {
                                 navigate("/login");
                               }}
@@ -196,26 +150,25 @@ function App() {
                             </button>
                           </div>
                         </form>
-                        <div className="">
-                          <p className="p1">
+                        <div className="all-card">
+                          <p className="header-card">
                             <small>| Amazing Destination</small>
                           </p>
-                          <p className="p2">
-                            {" "}
+                          <p className="header-card1">
                             Trending, <b>Best Selling Tours</b> And
                           </p>
-                          <p className="p3"> Fun Destinations </p>
-                          <nav className="nav2">
-                            <div className="side11">
+                          <p className="header-card2"> Fun Destinations </p>
+                          <div className="side11">
+                            <div className="allCard">
                               <div className="card">
                                 <img
-                                  className="italy-pic3"
+                                  className="italy-pic"
                                   src="/plae.jpg"
                                 ></img>
                                 <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
                                   ITALY
                                 </p>
-                                <br />
+
                                 <p className="onp">
                                   Holiday Planners sit <br /> amet consectetur
                                   adipisicing elit
@@ -226,7 +179,7 @@ function App() {
                                   300$
                                 </p>
                                 <button
-                                  className=" flex font-bold text-2xl bg-custom hover:bg-black text-cyan-50 w-32 rounded-tl rounded-tr"
+                                  className=" readmoree"
                                   onClick={() => {
                                     navigate("/login");
                                   }}
@@ -237,15 +190,15 @@ function App() {
                               <div className="card">
                                 <div className="cardsmall">
                                   <img
-                                    className="italy-pic2"
+                                    className="italy-pic"
                                     src="/mountain.jpg"
                                   ></img>
                                   <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
                                     RUSSIA
                                   </p>
-                                  <br />
+
                                   <p className="onp">
-                                    Holiday Planners sit amet consectetur <br />
+                                    Holiday Planners sit <br /> amet consectetur
                                     adipisicing elit
                                   </p>
 
@@ -255,7 +208,7 @@ function App() {
                                     300$
                                   </p>
                                   <button
-                                    className=" flex font-bold text-2xl bg-custom hover:bg-black text-cyan-50 w-32 rounded-tl rounded-tr"
+                                    className="readmoree"
                                     onClick={() => {
                                       navigate("/login");
                                     }}
@@ -267,19 +220,19 @@ function App() {
                               <div className="crad3small">
                                 <div className="card">
                                   <img
-                                    className="italy-pic1"
+                                    className="italy-pic"
                                     src="/image.jpg"
                                   ></img>
 
                                   <p className="flex font-bold text-2xl mt-8 hover:bg-custom cursor-pointer w-20">
                                     GREECE
                                   </p>
-                                  <br />
+
                                   <p className="onp">
                                     Holiday Planners sit <br /> amet consectetur
                                     adipisicing elit
                                   </p>
-                                  <br />
+
                                   <p className="delete1">
                                     <del className="red1">400$</del>
                                     <br />
@@ -287,7 +240,7 @@ function App() {
                                   </p>
 
                                   <button
-                                    className=" flex font-bold text-2xl bg-custom hover:bg-black text-cyan-50 w-32 rounded-tl rounded-tr"
+                                    className=" readmoree"
                                     onClick={() => {
                                       navigate("/login");
                                     }}
@@ -296,38 +249,39 @@ function App() {
                                   </button>
                                 </div>
                               </div>
-                              <br /> <br />
-                              <br />
                             </div>
-                          </nav>
-                          <br /> <br />
-                          <br />
+                            <br /> <br />
+                            <br />
+                          </div>
                         </div>
-                        <div className="testmony">
+                        {/* // Testimonials */}
+                        <div className="testmonial">
                           <p className="test2">
-                            <b className="lineff">|</b>Testimonials <br />
+                            |Testimonials <br />
                             <b className="cu">C</b>ustomer{" "}
                             <b className="cu">R</b>
                             eviews
                           </p>
+
+                          <img
+                            className="imagetestmony"
+                            src="/testmonyhome.JPG"
+                          ></img>
+                          <p className="testimonial-paragraph">
+                            adipisicing elit. Perferendis sapiente tenetur
+                            officiis explicabo fugit, sit mollitia eum atque
+                            excepturi quaerat autem. adipisicing elit.
+                            Perferendis sapiente tenetur officiis explicabo
+                            fugit, sit mollitia eum atque excepturi quaerat
+                            autem.adipisicing elit. Perferendis sapiente tenetur
+                            officiis explicabo fugit, sit mollitia eum atque
+                            excepturi quaerat autem.
+                          </p>
                           <br />
-                          <div className="abc">
-                            <img
-                              className="imagetestmony"
-                              src="/testmonyhome.JPG"
-                            ></img>
-                            <div className="testmony-p">
-                              adipisicing elit. Perferendis sapiente tenetur
-                              officiis explicabo fugit, sit mollitia eum atque
-                              excepturi quaerat autem. adipisicing elit.
-                              Perferendis sapiente tenetur officiis explicabo
-                              fugit, sit mollitia eum atque excepturi quaerat
-                              autem.adipisicing elit. Perferendis sapiente
-                              tenetur officiis explicabo fugit, sit mollitia eum
-                              atque excepturi quaerat autem.
-                            </div>
-                          </div>
                         </div>
+                        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />{" "}
+                        <br />
+                        {/* ?????//////////footer ///////////>>>>> */}
                         <div>
                           <nav className="footer">
                             <div className="respfooter">
@@ -335,7 +289,7 @@ function App() {
                                 <b className="bold">
                                   <b className="b">H</b>olliday
                                   <b className="b">P</b>
-                                  lanner
+                                  lanne
                                 </b>
                                 <br /> <br />
                                 <b className="i">
@@ -401,7 +355,6 @@ function App() {
                                   Sign Up Page
                                 </Link>{" "}
                                 <br />
-                               
                               </ul>
                             </div>
 
@@ -454,18 +407,10 @@ function App() {
                   }
                 />
               }
-              <Route
-                path="/tours"
-                element={<Tour />}
-              />
-              <Route
-                path="/tourList"
-                element={<TourList />}
-              />
-              <Route
-                path="/tourDetails/:id"
-                element={<TourDetail />}
-              />
+              <Route path="/tours" element={<Tour />} />
+              <Route path="/tourList" element={<TourList />} />
+              <Route path="/home" element={<home />} />
+              <Route path="/tourDetails/:id" element={<TourDetail />} />
 
               {/* <Route
                 path="/DashTour"
@@ -482,59 +427,51 @@ function App() {
                 element={
                   <body>
                     <div className="massege">
-                      <img
-                        src="/image.jpg"
-                        alt=""
-                        className="img-contact"
-                      />
+                      <img src="/image.jpg" alt="" className="img-contact" />
                       <p className="contactcss"> Contact Us</p>
 
-                      <div className=" flex flex-col mt-8">
-                        <div className="contactformsmall">
-                          <form
-                            action="/"
-                            method="get"
-                            id="form"
-                            class="text-center font-bold bg-white gap-6"
-                          >
-                            <div className="space-y-4">
-                              <div className="mr-10 mb-4">
-                                <input
-                                  type="text"
-                                  id="name1"
-                                  class="font-bold  border p-8 text-center bg-white"
-                                  placeholder="Full Name"
-                                />
-                              </div>
+                      <div className="contact-message">
+                        <input
+                          type="eml"
+                          id="email2"
+                          name="email"
+                          placeholder="FullName"
+                          required
+                        />
+                        <input
+                          type="eml"
+                          id="email2"
+                          name="email"
+                          placeholder="Email"
+                          required
+                        />
 
-                              <div className="mb-4">
-                                <input
-                                  type="email"
-                                  id="email"
-                                  class="font-bold border p-8 text-center bg-white"
-                                  placeholder="Email"
-                                  onChange={(e) => setEmail(e.target.value)}
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <input
-                                  type="text"
-                                  className="font-bold border p-16 text-center bg-white"
-                                  placeholder="Message"
-                                  onChange={(e) => setMessage(e.target.value)}
-                                />
-                              </div>
-                              <Link to="/">
-                                <button
-                                  onClick={(e) => handleForm(e)}
-                                  className=" flex bg-custom p-5 hover:bg-white ml-3 mb-7 mt-16 text-3xl space-x-2"
-                                >
-                                  Send Message
-                                </button>
-                              </Link>
-                            </div>
-                          </form>
-                        </div>
+                        <input
+                          type="eml"
+                          id="email2"
+                          name="email"
+                          placeholder="Contact"
+                          required
+                        />
+                        <textarea
+                          type="eml"
+                          id="email2"
+                          name="email"
+                          required
+                          placeholder="Please Enter your Message"
+                        />
+
+                        <button
+                          className="aa1"
+                          onClick={() => {
+                            navigate("/");
+                          }}
+                        >
+                          Send Your Message
+                        </button>
+                      </div>
+
+                      <div className=" ">
                         <div className="getaquestion">
                           <p>GET A QUESTION?</p>
 
@@ -557,10 +494,10 @@ function App() {
                             +123 456 7890
                           </p>
                         </div>
-                        <div className="whybookwithus">
-                          <h2 className=" font-bold text-center mt-11 text-2xl"></h2>{" "}
-                          <div className=" flex flex-col text-2xl mt-8 ml-12 mb-16">
-                            WHY BOOK WITH US?
+                        <div className="whybookwithus1">
+                          <div className="whybookwithus">
+                            WHY BOOK WITH US? <br />
+                            <br />
                             <p className=" flex gap-5">
                               <FaGreaterThan />
                               Best Price Guarantee
@@ -583,25 +520,27 @@ function App() {
                           <Link to="/">Go back to home</Link>
                         </p>
                         <br /> <br /> <br /> <br /> <br />
-                        <div className="footercontact"></div>
+                        {/* start footer-contacter */}
                         <nav className="footer">
-                          <div className="footerrensp">
+                          <div className="respfooter">
                             <p className="footer2">
                               <b className="bold">
-                                <b className="b">H</b>olliday{" "}
+                                <b className="b">H</b>olliday
                                 <b className="b">P</b>
-                                lanner
+                                lanne
                               </b>
                               <br /> <br />
                               <b className="i">
                                 Holiday Planners sit amet consectetur
                                 <br />
-                                adipisicing elit. Perferendis sapiente <br />
-                                tenetur officiis explicabo fugit, sit <br />
-                                mollitia eum atque excepturi quaerat autem.
-                              </b>{" "}
+                                <p className="iresponse">
+                                  adipisicing elit. Perferendis sapiente <br />
+                                  tenetur officiis explicabo fugit, sit <br />
+                                  mollitia eum atque excepturi quaerat autem.
+                                </p>
+                              </b>
                               <br /> <br />
-                              <div className="contactresp">
+                              <div>
                                 <input
                                   className="aa"
                                   type="eml"
@@ -635,28 +574,25 @@ function App() {
                               </div>
                             </p>
                           </div>
-                          <div className="">
-                            <div className="navigation">
-                              <p className="nav">Navigation</p>
-                              <p>_______________________________</p>
+
+                          <div className="navigation">
+                            <p className=" flex text-4xl mt-9">Navigation</p>
+                            <p>_______________________________</p>
+                            <br />
+                            <ul className="listf">
+                              {/* <li>Home</li> */}
+                              <Link to="/">Home Page</Link> <br></br>
+                              <Link to="/TourList">TourList Page</Link> <br />
+                              <Link to="/TourDetails">
+                                TourDetails Page
+                              </Link>{" "}
                               <br />
-                              <ul className="listf">
-                                {/* <li>Home</li> */}
-                                <Link to="/">Home Page</Link> <br></br>
-                                <Link to="/TourList">TourList Page</Link> <br />
-                                <Link to="/TourDetails">
-                                  TourDetails Page
-                                </Link>{" "}
-                                <br />
-                                <Link to="/LoginPage">Login Page</Link> <br />
-                                <Link to="/AddTestimony">
-                                  Sign Up Page
-                                </Link>{" "}
-                                <br />
-                               
-                              </ul>
-                            </div>
+                              <Link to="/LoginPage">Login Page</Link> <br />
+                              <Link to="/AddTestimony">Sign Up Page</Link>{" "}
+                              <br />
+                            </ul>
                           </div>
+
                           <div className="helpff">
                             <p className="help2">Need Help ?</p>
                             <p>________________________________</p>
@@ -678,80 +614,55 @@ function App() {
                             </p>
                           </div>
                         </nav>
+                        <p className="linebottom">
+                          ________________________________________________________________________________________________________________________________________________________________________________________________________________
+                        </p>
+                        <div className="down">
+                          <p>
+                            Copyright © 2023 <b className="c">clarisse.</b> All
+                            Rights Reserved
+                          </p>
+
+                          <p>Privacy Policy Terms of Use Cookie Policy</p>
+                          <button
+                            className="clicktop"
+                            onClick={() => {
+                              navigate("/login");
+                            }}
+                          >
+                            <BiSolidArrowToTop />
+                            Top
+                          </button>
+                        </div>
+                        <div />
                       </div>
+
+                      {/* end footer-contact */}
                     </div>
                   </body>
                 }
               ></Route>
             </Route>
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            <Route
-              path="/LoginPage"
-              element={<LoginPage />}
-            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/LoginPage" element={<LoginPage />} />
             ;
-            <Route
-              path="/SignUp"
-              element={<AddTestimony />}
-            />
-            <Route
-              path="/Dash"
-              element={<Dash />}
-            />
-            <Route
-              path="/Menu"
-              element={<Menu />}
-            />
-            <Route
-              path="/DashMenu"
-              element={<DashMenu />}
-            />
-            <Route
-              path="/DashTour"
-              element={<DashTour />}
-            />
-            <Route
-              path="/FormDash"
-              element={<FormDash />}
-            />
-            <Route
-              path="EditTour/:id"
-              element={<EditTour />}
-            />
-            <Route
-              path="/EditBooking/:id"
-              element={<EditBooking />}
-            />
-            <Route
-              path="/editUser"
-              element={<EditUser />}
-            />
-            <Route
-              path="/dashboard"
-              element={<Dashboard />}
-            >
-              <Route
-                path="user"
-                element={<UserDash />}
-              />
+            <Route path="/SignUp" element={<AddTestimony />} />
+            <Route path="/Dash" element={<Dash />} />
+            <Route path="/Menu" element={<Menu />} />
+            <Route path="/DashMenu" element={<DashMenu />} />
+            <Route path="/DashTour" element={<DashTour />} />
+            <Route path="/FormDash" element={<FormDash />} />
+            <Route path="EditTour/:id" element={<EditTour />} />
+            <Route path="/EditBooking/:id" element={<EditBooking />} />
+            <Route path="/editUser" element={<EditUser />} />
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="user" element={<UserDash />} />
 
-              <Route
-                path="booking"
-                element={<Booking />}
-              />
+              <Route path="booking" element={<Booking />} />
 
-              <Route
-                path="tour"
-                element={<DashTour />}
-              />
+              <Route path="tour" element={<DashTour />} />
 
-              <Route
-                path="home"
-                element={<Dash />}
-              />
+              <Route path="home" element={<Dash />} />
             </Route>
           </Routes>
         </BrowserRouter>

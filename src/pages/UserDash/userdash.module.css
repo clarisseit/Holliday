@@ -1,0 +1,93 @@
+.nameId{
+    width: 30px; 
+  
+
+
+}
+
+.trBooking{
+   
+    padding: 1px;
+    justify-content: space-between;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+   
+}
+
+  .actionss{
+    display: flex;
+    gap: 14px;
+    flex-direction: row;
+    justify-content: flex-end;  
+    font-size: 2rem;
+  }
+  .delete-btns{
+ 
+  }
+  .editButtonns{
+    color: #040504;
+  }
+.sidebarRightSideee{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 0;
+   background-color: #ffffff;
+   border-radius: 3rem;
+   
+}
+
+.tablee{
+    overflow: hidden;
+    table-layout: auto;
+   
+   
+   
+    width: 100%;
+    margin: auto;
+    overflow-x: auto;
+  }
+
+  .tableeu{
+    margin-top: 50px;
+  }
+  
+  .tablee thead{
+    color: black;
+    font-weight: 800;
+  }
+  
+  .tablee th{
+    text-align: center;
+
+  }
+
+
+  
+  .tablee th,
+  .tablee td{
+    padding: 0.5rem;
+  }
+  
+  .tablee td{
+    text-align: center;
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word;
+  }
+  .tablee tbody tr:hover {
+    background-color: rgba(212, 192, 167, 0.724);
+    cursor: pointer;
+  }
+.actionf{
+  display: flex;
+  padding-left: 1.5rem !important;
+  width: 100%;
+
+}
+.downn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

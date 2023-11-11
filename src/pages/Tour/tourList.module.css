@@ -146,14 +146,21 @@ input[type="center"]:hover {
 
 
  @media (max-width: 700px) {
+ .Container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+ }
+
     .rightContainer{
       
-      width: 100%; /* Take full width of the screen */
+      width: 90%; /* Take full width of the screen */
       display: flex;
       flex-direction: column;
       background-color: #ecf2ed;
-      margin-top: 227rem;
-      margin-left: -28rem;
+      margin-top: 320rem;
+      margin-left: -21rem;
+
     }
 
     .activitiessmall{

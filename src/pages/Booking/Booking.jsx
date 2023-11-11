@@ -16,10 +16,10 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { GrAddCircle } from "react-icons/gr";
 import { ToastContainer, toast } from "react-toastify";
 import ReactPaginate from "react-paginate";
-
 import { Link, useNavigate } from "react-router-dom";
+import { ThreeCircles } from "react-loader-spinner";
 import axios from "axios";
-
+import styles from "./booking.module.css";
 export default function () {
   const navigate = useNavigate();
   const [booking, setBooking] = useState([]);
@@ -33,39 +33,38 @@ export default function () {
     .map((item) => {
       console.log(item, "item");
       return (
-        <tr className=" flex gap-10 text-center ">
-          <td className=" flex flex-row text-center">{item.fullname}</td>
+        <tr>
+          <td>{item.fullname}</td>
 
           <td>{item.email}</td>
           <td>{item.phone}</td>
           <td>{item.date}</td>
           <td>{item.numberOfTickets}</td>
           <td>
-            <div className="actions">
-              <button
+            <span className={styles.actionss}>
+              <AiFillEdit
+                className={styles.deleteBtn}
                 onClick={() => {
                   navigate(`/EditBooking/${item._id}`);
                 }}
-                className="editdash"
-              >
-                <AiFillEdit />
-              </button>
-              <button
+              />
+
+              <AiFillDelete
+                className={styles.editButtonns}
                 onClick={() => handleDelete(item._id)}
-                className="reddelete"
-              >
-                <AiFillDelete />
-              </button>
-            </div>
+              
+              />
+            </span>
           </td>
         </tr>
       );
     });
-
+  const [isLoading, setIsLoading] = useState(false);
   const fetchBooking = () => {
+
     let token = localStorage.getItem("token");
     console.log(token);
-
+ setIsLoading(true);
     axios({
       method: "GET",
 
@@ -77,6 +76,7 @@ export default function () {
       setBooking(response.data);
 
       console.log(response.data);
+       setIsLoading(false);
     });
   };
 
@@ -113,49 +113,53 @@ export default function () {
   };
   return (
     <div>
-      {/* <ArrayTour/> */}
-      <div className="alldash">
-        <ToastContainer />
-
-        <h1 className=" mr-80font-bold text-4xl text-custom">Booking</h1>
-
-        <div className="addtours">
-          <Link to="/FormDash">
-            {/* <button className="addtoursin">
-              <GrAddCircle />
-              Booking Now
-            </button> */}
-          </Link>
-        </div>
-
-        <table className="dashtable">
-          <tbody className=" w-full">
-            <tr>
-              <td className=" underline border-spacing-64 ml-5 ">FullName</td>
-              <td className=" ml-10">Email</td>
-              <td className=" ml6">PhoneNumber</td>
-              <td className=" ml">Date</td>
-              <td>NumberOfTickets</td>
-
-              <td>Actions</td>
-            </tr>
-            {displayBooking} <ReactPaginate
-            previousLabel = {"Previous"}
-            nextLabel = {"Next"}
-            pageCount={pageCount}
-            onPageChange={changePage}
-            containerClassName={"paginationButton"}
-            previousLinkClassName={"previousButton"}
-            nextLinkClassName={"nextButton"}
-            disabledClassName={"paginationDisabled"}
-            activeClassName={"paginationActive"}
+      {isLoading ? (
+        <ThreeCircles
+          height="600"
+          width="500"
+          margin-right="auto"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=" bg-custom mr-24"
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      ) : (
+        <div className={styles.sidebarRightSideee}>
+          <h1 className="">Booking</h1>
+          <table className={styles.tablee}>
+            <thead>
+              <tr className={styles.trBooking}>
+                <th>FullName</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>Date</th>
+                <th>NumberOfTickets</th>
+                <th className={styles.Actionf}>Actions</th>
+              </tr>
+            </thead>
+            <tbody>{displayBooking}</tbody>
+          </table>
+          <div className={styles.downn}>
+            <ReactPaginate
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"paginationButton"}
+              previousLinkClassName={"previousButton"}
+              nextLinkClassName={"nextButton"}
+              disabledClassName={"paginationDisabled"}
+              activeClassName={"paginationActive"}
             />
-            <br />
-          </tbody>
-        </table>
+          </div>
+        </div>
+      )}
 
-
-      </div>
+      <ToastContainer />
     </div>
   );
 }

@@ -14,8 +14,8 @@ import { FaUsers as UserIcon } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-
-
+import { FidgetSpinner } from "react-loader-spinner";
+import { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import styles from "./Dashlayout.module.css";
 export default function Dashboard() {
@@ -24,10 +24,14 @@ export default function Dashboard() {
   const token = localStorage.getItem("token");
   const userString = localStorage.getItem("user");
   const user = JSON.parse(userString);
+   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     console.log(userString);
     console.log(user);
+    
+
+  setIsLoading(true);
 
     if (token && user.role == "user") {
       navigate("/");
@@ -101,6 +105,7 @@ export default function Dashboard() {
 
       <div className={styles.bgRedLeft}>
         <Outlet />
+        
       </div>
     </div>
   );
